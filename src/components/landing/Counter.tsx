@@ -15,10 +15,6 @@ export function Counter({ target, className }: CounterProps) {
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -38,43 +34,53 @@ export function Counter({ target, className }: CounterProps) {
 
     return () => {
       if (ref.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(ref.current);
       }
     };
-  }, [isMounted]);
+  }, []);
 
   useEffect(() => {
     if (!isInView || !isMounted) return;
 
     let start = 0;
     const duration = 2000;
-    const startTime = Date.now();
+    let startTime: number | null = null;
 
-    const animate = () => {
-      const currentTime = Date.now();
-      const progress = Math.min(1, (currentTime - startTime) / duration);
-      const currentCount = Math.floor(progress * (target - start) + start);
-      setCount(currentCount);
+    const animate = (timestamp: number) => {
+        if(!startTime) startTime = timestamp;
+        const progress = Math.min(1, (timestamp - startTime) / duration);
+        const currentCount = Math.floor(progress * (target - start) + start);
+        setCount(currentCount);
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setCount(target);
-      }
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        } else {
+            setCount(target);
+        }
     };
 
     requestAnimationFrame(animate);
   }, [isInView, target, isMounted]);
   
   const displayValue = () => {
-    if (!isMounted) return 0; // Render initial value on server
+    if (!isMounted) return 0;
     const displayCount = count;
-    return displayCount >= 1000 ? `${(displayCount/1000).toFixed(0)}k+` : displayCount;
+    if (target >= 1000) {
+      const value = isInView ? displayCount : target;
+      return value >= 1000 ? `${(value/1000).toFixed(0)}k+` : displayCount
+    }
+    return isInView ? displayCount : target;
+  }
+  
+  const initialDisplay = () => {
+    if(target >= 1000) return `${(target/1000).toFixed(0)}k+`;
+    return target;
   }
 
   return (
     <div ref={ref} className={className}>
-      {displayValue()}
+      {isMounted && isInView ? displayValue() : initialDisplay()}
     </div>
   );
 }
