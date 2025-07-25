@@ -10,13 +10,31 @@ type CounterProps = {
 export function Counter({ target, className }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true);
+          let start = 0;
+          const duration = 2000;
+          let startTime: number | null = null;
+
+          const animate = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min(1, (timestamp - startTime) / duration);
+            const currentCount = Math.floor(progress * target);
+            setCount(currentCount);
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(target);
+            }
+          };
+
+          requestAnimationFrame(animate);
           observer.disconnect();
         }
       },
@@ -35,42 +53,16 @@ export function Counter({ target, className }: CounterProps) {
         observer.unobserve(currentRef);
       }
     };
-  }, []);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let start = 0;
-    const duration = 2000;
-    let startTime: number | null = null;
-
-    const animate = (timestamp: number) => {
-        if(!startTime) startTime = timestamp;
-        const progress = Math.min(1, (timestamp - startTime) / duration);
-        const currentCount = Math.floor(progress * (target - start) + start);
-        setCount(currentCount);
-
-        if (progress < 1) {
-            requestAnimationFrame(animate);
-        } else {
-            setCount(target);
-        }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isInView, target]);
-
-  const displayValue = isInView ? count : 0;
+  }, [target]);
+  
+  const displayValue = isMounted ? count : 0;
 
   const formatDisplayValue = (value: number) => {
     if (target >= 1000) {
-      if (isInView) {
-        return value >= 1000 ? `${(value/1000).toFixed(0)}k+` : value;
-      }
-      return `${(target/1000).toFixed(0)}k+`
+      return value >= 1000 ? `${Math.floor(value / 1000)}k+` : value;
     }
-    return isInView ? value : target;
-  }
+    return value;
+  };
 
   return (
     <div ref={ref} className={className}>
