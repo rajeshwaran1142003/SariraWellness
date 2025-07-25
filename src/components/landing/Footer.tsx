@@ -6,11 +6,11 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { SariraLogo } from '../icons/SariraLogo';
 
 const exploreLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#product', label: 'Shop' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/product', label: 'Shop' },
+  { href: '/#journal', label: 'Journal' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 const supportLinks = [
@@ -41,7 +41,7 @@ export function Footer() {
             <h3 className="text-lg font-bold mb-4">Explore</h3>
             <ul className="space-y-2">
               {exploreLinks.map(link => (
-                  <li key={link.href}><a href={link.href} className="text-primary-foreground/80 hover:text-accent transition">{link.label}</a></li>
+                  <li key={link.href}><Link href={link.href} className="text-primary-foreground/80 hover:text-accent transition">{link.label}</Link></li>
               ))}
             </ul>
           </div>

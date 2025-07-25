@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import SariraFigMalt from '@/components/icons/SariraFigMalt';
 
@@ -43,7 +43,7 @@ export function Product() {
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-accent mr-3 mt-1 shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-accent mr-3 mt-1 shrink-0" />
                     <span className="text-muted-foreground">{benefit}</span>
                   </li>
                 ))}
@@ -68,7 +68,7 @@ export function Product() {
                 <div className="text-muted-foreground">200g jar</div>
               </div>
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="#">Buy Now</Link>
+                <Link href="/product">Buy Now</Link>
               </Button>
             </div>
           </div>

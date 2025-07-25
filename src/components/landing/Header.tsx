@@ -8,13 +8,13 @@ import { cn } from '@/lib/utils';
 import { SariraLogo } from '@/components/icons/SariraLogo';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#product', label: 'Fig Malt' },
-  { href: '#science', label: 'Science' },
-  { href: '#community', label: 'Community' },
-  { href: '#journal', label: 'Journal' },
-  { href: '#wellness-ai', label: 'Wellness AI'}
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/product', label: 'Fig Malt' },
+  { href: '/#science', label: 'Science' },
+  { href: '/#community', label: 'Community' },
+  { href: '/#journal', label: 'Journal' },
+  { href: '/#wellness-ai', label: 'Wellness AI'}
 ];
 
 export function Header() {
@@ -37,14 +37,14 @@ export function Header() {
       isScrolled ? 'bg-background/80 backdrop-blur-sm shadow-md' : 'bg-transparent',
     )}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
-        <Link href="#home" className="text-2xl font-bold font-headline text-primary">
+        <Link href="/" className="text-2xl font-bold font-headline text-primary">
           <SariraLogo />
         </Link>
         <nav className="hidden md:flex space-x-8">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="text-primary hover:text-accent transition-colors duration-300">
+            <Link key={link.href} href={link.href} className="text-primary hover:text-accent transition-colors duration-300">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="md:hidden">
@@ -59,7 +59,7 @@ export function Header() {
         isOpen ? 'translate-x-0' : '-translate-x-full'
       )}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="#home" onClick={closeMenu} className="text-2xl font-bold font-headline text-primary">
+            <Link href="/" onClick={closeMenu} className="text-2xl font-bold font-headline text-primary">
               <SariraLogo />
             </Link>
             <Button onClick={closeMenu} variant="ghost" size="icon">
@@ -68,9 +68,9 @@ export function Header() {
         </div>
         <nav className="flex flex-col items-center justify-center h-[calc(100%-80px)] space-y-8">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} onClick={closeMenu} className="text-2xl text-primary hover:text-accent transition-colors duration-300">
+            <Link key={link.href} href={link.href} onClick={closeMenu} className="text-2xl text-primary hover:text-accent transition-colors duration-300">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

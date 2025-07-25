@@ -38,7 +38,7 @@ export function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link href="#product">Try Fig Malt</Link>
+              <Link href="/product">Try Fig Malt</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
               <Link href="#community">Join Our WhatsApp Circle</Link>
