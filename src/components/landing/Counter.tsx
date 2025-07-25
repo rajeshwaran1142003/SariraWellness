@@ -10,9 +10,16 @@ type CounterProps = {
 export function Counter({ target, className }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,12 +37,14 @@ export function Counter({ target, className }: CounterProps) {
     }
 
     return () => {
-      observer.disconnect();
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
     };
-  }, []);
+  }, [isMounted]);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || !isMounted) return;
 
     let start = 0;
     const duration = 2000;
@@ -55,11 +64,17 @@ export function Counter({ target, className }: CounterProps) {
     };
 
     requestAnimationFrame(animate);
-  }, [isInView, target]);
+  }, [isInView, target, isMounted]);
+  
+  const displayValue = () => {
+    if (!isMounted) return 0; // Render initial value on server
+    const displayCount = count;
+    return displayCount >= 1000 ? `${(displayCount/1000).toFixed(0)}k+` : displayCount;
+  }
 
   return (
     <div ref={ref} className={className}>
-      {count >= 1000 ? `${(count/1000).toFixed(0)}k+` : count}
+      {displayValue()}
     </div>
   );
 }
