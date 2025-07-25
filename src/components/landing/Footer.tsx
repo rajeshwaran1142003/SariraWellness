@@ -3,6 +3,7 @@ import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { YoutubeIcon } from '@/components/icons/YoutubeIcon';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { SariraLogo } from '../icons/SariraLogo';
 
 const exploreLinks = [
   { href: '#home', label: 'Home' },
@@ -25,7 +26,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold font-headline mb-4">SARIRA</h3>
+            <div className="mb-4">
+              <SariraLogo />
+            </div>
             <p className="mb-4 text-primary-foreground/80">Functional wellness rooted in Tamil tradition, blended for today's lifestyle.</p>
             <div className="flex space-x-4">
               <Link href="#" className="text-primary-foreground hover:text-accent transition"><InstagramIcon className="h-6 w-6" /></Link>

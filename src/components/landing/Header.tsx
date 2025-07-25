@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { SariraLogo } from '@/components/icons/SariraLogo';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -37,7 +38,7 @@ export function Header() {
     )}>
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
         <Link href="#home" className="text-2xl font-bold font-headline text-primary">
-          SARIRA
+          <SariraLogo />
         </Link>
         <nav className="hidden md:flex space-x-8">
           {navLinks.map(link => (
@@ -59,7 +60,7 @@ export function Header() {
       )}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="#home" onClick={closeMenu} className="text-2xl font-bold font-headline text-primary">
-              SARIRA
+              <SariraLogo />
             </Link>
             <Button onClick={closeMenu} variant="ghost" size="icon">
               <X className="h-6 w-6 text-primary" />
