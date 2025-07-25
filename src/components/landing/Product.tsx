@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+import SariraFigMalt from '@/components/icons/SariraFigMalt';
 
 const benefits = [
   "Supports digestive health naturally",
@@ -30,12 +31,8 @@ export function Product() {
         
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 flex justify-center">
-            <Image 
-              src="https://placehold.co/600x600.png"
-              data-ai-hint="wellness product"
+            <SariraFigMalt
               alt="Fig Malt"
-              width={500}
-              height={500}
               className="w-full max-w-md mx-auto rounded-lg shadow-xl animate-floating"
             />
           </div>

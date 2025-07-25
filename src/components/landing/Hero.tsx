@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import SariraFigMalt from '@/components/icons/SariraFigMalt';
 
 export function Hero() {
   const [typedText, setTypedText] = useState('');
@@ -45,14 +46,9 @@ export function Hero() {
           </div>
         </div>
         <div className="md:w-1/2 flex justify-center">
-          <Image 
-            src="https://placehold.co/600x600.png" 
-            data-ai-hint="wellness product"
+          <SariraFigMalt
             alt="SARIRA Fig Malt"
-            width={500}
-            height={500}
             className="w-full max-w-md rounded-lg shadow-2xl animate-floating"
-            priority
           />
         </div>
       </div>
