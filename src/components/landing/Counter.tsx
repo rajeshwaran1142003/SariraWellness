@@ -10,12 +10,9 @@ type CounterProps = {
 export function Counter({ target, className }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -28,20 +25,20 @@ export function Counter({ target, className }: CounterProps) {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
 
   useEffect(() => {
-    if (!isInView || !isMounted) return;
+    if (!isInView) return;
 
     let start = 0;
     const duration = 2000;
@@ -61,26 +58,23 @@ export function Counter({ target, className }: CounterProps) {
     };
 
     requestAnimationFrame(animate);
-  }, [isInView, target, isMounted]);
-  
-  const displayValue = () => {
-    if (!isMounted) return 0;
-    const displayCount = count;
+  }, [isInView, target]);
+
+  const displayValue = isInView ? count : 0;
+
+  const formatDisplayValue = (value: number) => {
     if (target >= 1000) {
-      const value = isInView ? displayCount : target;
-      return value >= 1000 ? `${(value/1000).toFixed(0)}k+` : displayCount
+      if (isInView) {
+        return value >= 1000 ? `${(value/1000).toFixed(0)}k+` : value;
+      }
+      return `${(target/1000).toFixed(0)}k+`
     }
-    return isInView ? displayCount : target;
-  }
-  
-  const initialDisplay = () => {
-    if(target >= 1000) return `${(target/1000).toFixed(0)}k+`;
-    return target;
+    return isInView ? value : target;
   }
 
   return (
     <div ref={ref} className={className}>
-      {isMounted && isInView ? displayValue() : initialDisplay()}
+      {formatDisplayValue(displayValue)}
     </div>
   );
 }
