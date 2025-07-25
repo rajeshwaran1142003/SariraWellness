@@ -10,31 +10,13 @@ type CounterProps = {
 export function Counter({ target, className }: CounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          let start = 0;
-          const duration = 2000;
-          let startTime: number | null = null;
-
-          const animate = (timestamp: number) => {
-            if (!startTime) startTime = timestamp;
-            const progress = Math.min(1, (timestamp - startTime) / duration);
-            const currentCount = Math.floor(progress * target);
-            setCount(currentCount);
-
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            } else {
-              setCount(target);
-            }
-          };
-
-          requestAnimationFrame(animate);
+          setIntersecting(true);
           observer.disconnect();
         }
       },
@@ -53,9 +35,32 @@ export function Counter({ target, className }: CounterProps) {
         observer.unobserve(currentRef);
       }
     };
-  }, [target]);
+  }, []);
+
+  useEffect(() => {
+    if (isIntersecting) {
+      let start = 0;
+      const duration = 2000;
+      let startTime: number | null = null;
+
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min(1, (timestamp - startTime) / duration);
+        const currentCount = Math.floor(progress * target);
+        setCount(currentCount);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setCount(target);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }
+  }, [isIntersecting, target]);
   
-  const displayValue = isMounted ? count : 0;
+  const displayValue = isIntersecting ? count : 0;
 
   const formatDisplayValue = (value: number) => {
     if (target >= 1000) {
