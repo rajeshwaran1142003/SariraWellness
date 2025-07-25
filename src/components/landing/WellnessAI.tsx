@@ -1,12 +1,12 @@
 "use client";
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef } from 'react';
+import { useFormStatus } from 'react-dom';
 import { getWellnessTip, State } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Sparkles } from 'lucide-react';
 
@@ -21,7 +21,7 @@ function SubmitButton() {
 
 export function WellnessAI() {
   const initialState: State = { message: null, errors: {}, tip: null };
-  const [state, dispatch] = useFormState(getWellnessTip, initialState);
+  const [state, dispatch] = useActionState(getWellnessTip, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
 
