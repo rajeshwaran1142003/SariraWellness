@@ -34,9 +34,20 @@ export function Science() {
           ))}
         </div>
         
-        <div className="mt-12 bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-primary mb-4">100% Natural | No Chemicals | Kid & Senior Friendly</h3>
-          <p className="text-muted-foreground">Our Fig Malt contains no artificial preservatives, colors, or flavors. Every ingredient is sourced from trusted organic farms and prepared using traditional methods that preserve nutritional value.</p>
+        <div className="mt-12 bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-3/4 text-center md:text-left">
+                <h3 className="text-2xl font-bold text-primary mb-4">100% Natural | No Chemicals | Kid & Senior Friendly</h3>
+                <p className="text-muted-foreground">Our Fig Malt contains no artificial preservatives, colors, or flavors. Every ingredient is sourced from trusted organic farms and prepared using traditional methods that preserve nutritional value.</p>
+            </div>
+            <div className="md:w-1/4 flex justify-center">
+                <Image 
+                    src="https://storage.googleapis.com/stedi-dev-images/100-natural.png"
+                    alt="100% Natural Seal"
+                    width={150}
+                    height={150}
+                    className="flex-shrink-0"
+                />
+            </div>
         </div>
       </div>
     </section>
