@@ -12,14 +12,6 @@ const benefits = [
   "Safe for all ages - kids to seniors",
 ];
 
-const nutritionFacts = [
-  { label: "Energy", value: "320 kcal" },
-  { label: "Protein", value: "5.2g" },
-  { label: "Carbohydrates", value: "68g" },
-  { label: "Dietary Fiber", value: "7.5g" },
-  { label: "Natural Sugars", value: "52g" },
-];
-
 export function Product() {
   return (
     <section id="product" className="bg-background">
@@ -48,18 +40,6 @@ export function Product() {
                   </li>
                 ))}
               </ul>
-            </div>
-            
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-primary mb-4">Nutrition Facts (per 100g)</h3>
-              <div className="bg-secondary/50 p-4 rounded-lg">
-                {nutritionFacts.map((fact, index) => (
-                  <div key={index} className={`flex justify-between py-2 ${index < nutritionFacts.length - 1 ? 'border-b' : ''}`}>
-                    <span className="text-muted-foreground">{fact.label}</span>
-                    <span className="font-medium text-primary">{fact.value}</span>
-                  </div>
-                ))}
-              </div>
             </div>
             
             <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">

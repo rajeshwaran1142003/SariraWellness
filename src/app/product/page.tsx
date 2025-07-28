@@ -97,12 +97,6 @@ export default function ProductPage() {
                       </ul>
                     </AccordionContent>
                   </AccordionItem>
-                  <AccordionItem value="nutrition">
-                    <AccordionTrigger className="text-xl font-bold text-primary">Nutrition Facts</AccordionTrigger>
-                    <AccordionContent>
-                      <p className="text-muted-foreground pt-2">Detailed nutrition information coming soon.</p>
-                    </AccordionContent>
-                  </AccordionItem>
                   <AccordionItem value="how-to-use">
                     <AccordionTrigger className="text-xl font-bold text-primary">How to Use</AccordionTrigger>
                     <AccordionContent>
