@@ -66,15 +66,6 @@ export default function PrivacyPolicyPage() {
 
             <h2>8. Policy Updates</h2>
             <p>We may update this Privacy Policy from time to time. The latest version will always be available on our website, and your continued use indicates acceptance.</p>
-
-            <h2>Contact Us</h2>
-            <p>For questions, feedback, or privacy concerns, contact:</p>
-            <p>
-                SARIRA Wellness<br />
-                Email: support@sarirawellness.com<br />
-                Phone: +91-7010422748<br />
-                Website: www.sarirawellness.com
-            </p>
           </div>
         </section>
       </main>
