@@ -4,28 +4,49 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const faqItems = [
     {
         question: "What is SARIRA Fig Malt made of?",
-        answer: "SARIRA Fig Malt is made from high-quality organic figs and a blend of premium nuts. It contains no added sugar, preservatives, or artificial flavors."
+        answer: "SARIRA Fig Malt is made from 100% organic figs and premium nuts. No preservatives, no refined sugar, and no artificial flavors — just clean, plant-based nutrition."
     },
     {
-        question: "Is it safe for children and elders?",
-        answer: "Yes, our Fig Malt is 100% natural and safe for all age groups, including children and senior citizens. It's a great source of natural energy and nutrients."
+        question: "Is SARIRA safe for children and elders?",
+        answer: "Yes! SARIRA is gentle, nutritious, and family-friendly, suitable for children above 1 year and elders alike. It supports digestion, immunity, and energy in all age groups."
     },
     {
-        question: "Can I use it as a sugar replacement?",
-        answer: "While it has a natural sweetness from figs, it's not a direct sugar replacement. It's a nutritious food supplement that can be used to sweeten porridge, milk, or as a topping."
+        question: "Can I use SARIRA as a sugar substitute?",
+        answer: "Absolutely. SARIRA Fig Malt has a naturally sweet taste from figs and can be used in place of refined sugar in milk, tea, porridge, baking, or toast toppings."
     },
     {
-        question: "How do I consume it?",
-        answer: "You can enjoy Fig Malt in many ways! Spread it on toast, mix it into porridge or milk, use it as a filling for chapatis, or simply eat a spoonful as a healthy snack."
+        question: "What are the health benefits of SARIRA?",
+        answer: "SARIRA supports: Digestive health (rich in fiber), Energy and stamina, Iron and calcium intake, Gut-friendly sweetness, Gentle detox and immunity support."
     },
     {
-        question: "What is the shelf life and how should I store it?",
-        answer: "Our Fig Malt has a shelf life of 6 months. Please store it in a cool, dry place and use a clean, dry spoon to serve."
+        question: "How do I consume SARIRA Fig Malt?",
+        answer: "You can: Mix 1 tbsp with warm milk or water, Add to smoothies or porridge, Use as a toast topping, Bake into muffins or energy balls. Avoid boiling directly to preserve nutrients."
     },
+    {
+        question: "Does SARIRA contain grains, preservatives, or added sugar?",
+        answer: "No. SARIRA is grain-free, preservative-free, and refined sugar-free. Just figs and nuts — nothing more."
+    },
+    {
+        question: "What is the shelf life of SARIRA Fig Malt?",
+        answer: "SARIRA has a shelf life of 6 months when stored in a cool, dry place. Always close the lid tightly after use."
+    },
+    {
+        question: "Where do you ship and how long does it take?",
+        answer: "We ship across India. Orders are usually delivered in 3–7 business days depending on your location. Orders above ₹800 are eligible for free shipping."
+    },
+    {
+        question: "What payment options do you accept?",
+        answer: "We accept UPI, debit/credit cards, net banking, and Cash on Delivery (COD) in select locations."
+    },
+    {
+        question: "Who do I contact for queries or returns?",
+        answer: "For any support, email us at support@sarirawellness.com or WhatsApp us at +91-7010422748. We're available Mon–Sat, 10AM – 6PM."
+    }
 ];
 
 export function Faq() {
@@ -37,19 +58,22 @@ export function Faq() {
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground">
-            Have questions? We have answers.
+            SARIRA Fig Malt – Wellness Made Simple
           </p>
         </div>
         <Accordion type="single" collapsible className="w-full">
             {faqItems.map((item, index) => (
                  <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger className="text-lg text-left">{item.question}</AccordionTrigger>
-                    <AccordionContent className="text-base text-muted-foreground">
-                        {item.answer}
+                    <AccordionContent className="text-base text-muted-foreground prose">
+                        <p>{item.answer}</p>
                     </AccordionContent>
                 </AccordionItem>
             ))}
         </Accordion>
+        <div className="text-center mt-12 text-muted-foreground">
+            <p>Still have questions? Feel free to <Link href="/#contact" className="text-accent hover:underline">contact our wellness team</Link> — we’re here to help you on your journey to better living.</p>
+        </div>
       </div>
     </section>
   );
