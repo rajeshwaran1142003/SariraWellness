@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, Store } from 'lucide-react';
+import { Home, Store, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
 
 export function Community() {
@@ -22,11 +22,12 @@ export function Community() {
               <CardDescription className="mb-6">Join our growing community of families who prioritize natural wellness. Get access to exclusive recipes, wellness tips, and special offers.</CardDescription>
               <div className="space-y-4">
                 <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                  <Link href="https://wa.me/917010422748" target="_blank">Join Now</Link>
+                  <Link href="https://wa.me/917010422748" target="_blank">Join on WhatsApp</Link>
                 </Button>
-                <Button asChild variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground" size="lg">
-                   <Link href="https://wa.me/917010422748" target="_blank">Ask on WhatsApp</Link>
-                </Button>
+                 <div className="flex items-center justify-center space-x-4">
+                    <Link href="https://www.instagram.com/sarira.wellness" target="_blank" className="text-primary hover:text-accent"><Instagram className="w-7 h-7" /></Link>
+                    <Link href="#" className="text-primary hover:text-accent"><Facebook className="w-7 h-7" /></Link>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -39,7 +40,7 @@ export function Community() {
             <CardContent>
               <p className="mb-6 text-primary-foreground/80">Become an authorized SARIRA reseller and bring authentic Tamil wellness products to your community. Enjoy wholesale pricing and marketing support.</p>
               <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                 <Link href="#">Become a Reseller</Link>
+                 <Link href="mailto:support@sarirawellness.com">Become a Reseller</Link>
               </Button>
             </CardContent>
           </Card>

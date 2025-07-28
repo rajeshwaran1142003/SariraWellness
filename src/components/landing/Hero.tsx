@@ -4,7 +4,14 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import SariraFigMalt from '@/components/icons/SariraFigMalt';
+import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
+
+const benefits = [
+    { text: "Fertility Boost", icon: <HeartPulse /> },
+    { text: "Postpartum Support", icon: <Baby /> },
+    { text: "Immunity", icon: <ShieldCheck /> },
+    { text: "No Preservatives", icon: <Sparkles /> }
+];
 
 export function Hero() {
   const [typedText, setTypedText] = useState('');
@@ -20,13 +27,8 @@ export function Hero() {
   }, [typedText]);
 
   return (
-    <section id="home" className="relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-white">
-      <div className="absolute inset-0 opacity-10 z-0">
-          <Image src="https://placehold.co/100x100.png" data-ai-hint="leaf pattern" alt="leaf decoration" width={100} height={100} className="absolute top-10 left-10 w-20 h-20" />
-          <Image src="https://placehold.co/80x80.png" data-ai-hint="leaf pattern" alt="leaf decoration" width={80} height={80} className="absolute top-1/4 right-10 w-16 h-16" />
-          <Image src="https://placehold.co/120x120.png" data-ai-hint="leaf pattern" alt="leaf decoration" width={120} height={120} className="absolute bottom-20 left-1/4 w-24 h-24" />
-      </div>
-
+    <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
+       <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
         <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[192px]">
@@ -41,15 +43,27 @@ export function Hero() {
               <Link href="/product">Try Fig Malt</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-              <Link href="#community">Join Our WhatsApp Circle</Link>
+              <Link href="https://wa.me/917010422748" target="_blank">Join Our WhatsApp Circle</Link>
             </Button>
           </div>
+           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                {benefits.map(benefit => (
+                    <div key={benefit.text} className="flex flex-col items-center gap-2">
+                        <div className="text-accent">{benefit.icon}</div>
+                        <span className="text-sm font-medium text-primary">{benefit.text}</span>
+                    </div>
+                ))}
+            </div>
         </div>
         <div className="md:w-1/2 flex justify-center">
-          <SariraFigMalt
-            alt="SARIRA Fig Malt"
-            className="w-full max-w-md rounded-lg shadow-2xl animate-floating"
-          />
+            <Image
+                src="https://storage.googleapis.com/stedi-dev-images/sarira-fig-malt.png"
+                alt="SARIRA Fig Malt"
+                width={500}
+                height={500}
+                priority
+                className="w-full max-w-md rounded-lg shadow-2xl animate-floating"
+            />
         </div>
       </div>
     </section>

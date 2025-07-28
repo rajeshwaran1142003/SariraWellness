@@ -10,13 +10,13 @@
     --card-foreground: 88 28% 15%;
     --popover: 0 0% 100%;
     --popover-foreground: 88 28% 15%;
-    --primary: 88 28% 21%; /* Earth Green */
+    --primary: 88 28% 21%; /* Deep Green #364A22 */
     --primary-foreground: 43 43% 98%;
     --secondary: 43 33% 92%;
     --secondary-foreground: 88 28% 21%;
     --muted: 43 33% 94%;
     --muted-foreground: 88 28% 35%;
-    --accent: 29 78% 54%; /* Warm Orange */
+    --accent: 29 78% 54%; /* Burnt Orange #E38A30 */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;

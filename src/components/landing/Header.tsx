@@ -11,9 +11,9 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/#about', label: 'About' },
   { href: '/product', label: 'Fig Malt' },
-  { href: '/#science', label: 'Science' },
-  { href: '/#community', label: 'Community' },
-  { href: '/#journal', label: 'Journal' },
+  { href: '/#recipes', label: 'Recipes' },
+  { href: '/#gallery', label: 'Gallery' },
+  { href: '/#faq', label: 'FAQ' },
   { href: '/#wellness-ai', label: 'Wellness AI'}
 ];
 
@@ -34,18 +34,21 @@ export function Header() {
   return (
     <header className={cn(
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-      isScrolled ? 'bg-background/80 backdrop-blur-sm shadow-md' : 'bg-transparent',
+      isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-transparent',
     )}>
-      <div className="container mx-auto px-4 flex justify-between items-center py-4">
+      <div className="container mx-auto px-4 flex justify-between items-center py-2">
         <Link href="/" className="text-2xl font-bold font-headline text-primary">
-          <SariraLogo />
+          <SariraLogo className="h-14 w-auto" />
         </Link>
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-6 items-center">
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="text-primary hover:text-accent transition-colors duration-300">
+            <Link key={link.href} href={link.href} className="text-primary hover:text-accent transition-colors duration-300 font-medium">
               {link.label}
             </Link>
           ))}
+          <Button asChild>
+            <Link href="/product">Shop Now</Link>
+          </Button>
         </nav>
         <div className="md:hidden">
           <Button onClick={() => setIsOpen(!isOpen)} variant="ghost" size="icon">
@@ -55,12 +58,12 @@ export function Header() {
       </div>
       {/* Mobile Menu */}
       <div className={cn(
-        'md:hidden fixed top-0 left-0 w-full h-full bg-background/90 backdrop-blur-lg z-50 transition-transform duration-300 ease-in-out',
+        'md:hidden fixed top-0 left-0 w-full h-full bg-background/95 backdrop-blur-lg z-50 transition-transform duration-300 ease-in-out',
         isOpen ? 'translate-x-0' : '-translate-x-full'
       )}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" onClick={closeMenu} className="text-2xl font-bold font-headline text-primary">
-              <SariraLogo />
+              <SariraLogo className="h-14 w-auto"/>
             </Link>
             <Button onClick={closeMenu} variant="ghost" size="icon">
               <X className="h-6 w-6 text-primary" />
@@ -72,6 +75,9 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+           <Button asChild size="lg">
+            <Link href="/product" onClick={closeMenu}>Shop Now</Link>
+          </Button>
         </nav>
       </div>
     </header>

@@ -1,15 +1,17 @@
 import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
-import { WellnessFeatures } from '@/components/landing/WellnessFeatures';
 import { About } from '@/components/landing/About';
 import { Product } from '@/components/landing/Product';
-import { Science } from '@/components/landing/Science';
 import { Community } from '@/components/landing/Community';
 import { Journal } from '@/components/landing/Journal';
-import { Testimonials } from '@/components/landing/Testimonials';
 import { WellnessAI } from '@/components/landing/WellnessAI';
 import { Footer } from '@/components/landing/Footer';
 import { WhatsappButton } from '@/components/landing/WhatsappButton';
+import { Gallery } from '@/components/landing/Gallery';
+import { HowToUse } from '@/components/landing/HowToUse';
+import { Recipes } from '@/components/landing/Recipes';
+import { StoreLocator } from '@/components/landing/StoreLocator';
+import { Faq } from '@/components/landing/Faq';
 
 export default function Home() {
   return (
@@ -17,13 +19,15 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <WellnessFeatures />
         <About />
         <Product />
-        <Science />
-        <Community />
+        <HowToUse />
+        <Recipes />
+        <Gallery />
         <Journal />
-        <Testimonials />
+        <Community />
+        <StoreLocator />
+        <Faq />
         <WellnessAI />
       </main>
       <Footer />

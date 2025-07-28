@@ -5,22 +5,25 @@ import Link from 'next/link';
 
 const posts = [
   {
-    title: "The Fig in Tamil Culture: More Than Just a Fruit",
-    description: "Explore how the humble fig has been revered in Tamil tradition for centuries, from medicinal uses to spiritual significance.",
+    title: "The Role of Figs in Tamil Tradition",
+    description: "Discover the ancient wisdom and health benefits of figs in traditional Tamil culture and cuisine.",
     image: "https://placehold.co/800x600.png",
-    hint: "traditional kitchen"
+    hint: "figs on a plate",
+    link: "#"
   },
   {
-    title: "Grandmother's Wisdom: Ancient Nutrition Practices",
-    description: "How traditional Tamil kitchen practices align with modern nutritional science and why they still matter today.",
+    title: "Natural Fertility Boosters",
+    description: "Learn how plant-based nutrition, including powerful ingredients like figs, can support your fertility journey.",
     image: "https://placehold.co/800x600.png",
-    hint: "spices herbs"
+    hint: "woman healthy food",
+    link: "#"
   },
   {
-    title: "Gut Health: The Tamil Way",
-    description: "Traditional Tamil approaches to digestive wellness and how they compare with modern probiotic trends.",
+    title: "Postpartum Wellness with Plant-Based Nutrition",
+    description: "Nourish your body and mind after childbirth with these gentle, effective plant-based wellness tips.",
     image: "https://placehold.co/800x600.png",
-    hint: "healthy food"
+    hint: "mother baby food",
+    link: "#"
   }
 ];
 
@@ -37,12 +40,14 @@ export function Journal() {
           {posts.map((post) => (
             <Card key={post.title} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
               <CardHeader className="p-0">
-                <Image src={post.image} data-ai-hint={post.hint} alt={post.title} width={800} height={600} className="w-full h-48 object-cover" />
+                <Link href={post.link}>
+                  <Image src={post.image} data-ai-hint={post.hint} alt={post.title} width={800} height={600} className="w-full h-48 object-cover" />
+                </Link>
               </CardHeader>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-primary mb-2 h-20">{post.title}</h3>
                 <p className="text-muted-foreground mb-4 h-24 overflow-hidden">{post.description}</p>
-                <Link href="#" className="font-semibold text-accent hover:underline">
+                <Link href={post.link} className="font-semibold text-accent hover:underline">
                   Read More →
                 </Link>
               </CardContent>

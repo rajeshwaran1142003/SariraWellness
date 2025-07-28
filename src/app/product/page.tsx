@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, Leaf, Sprout, Brain } from 'lucide-react';
+import { CheckCircle2, Leaf, Sprout, Brain, Utensils, Sandwich, Soup } from 'lucide-react';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import SariraFigMalt from '@/components/icons/SariraFigMalt';
@@ -13,11 +13,11 @@ import {
 
 
 const benefits = [
-  "Supports digestive health naturally",
-  "Boosts energy without artificial stimulants",
-  "Rich in antioxidants and essential minerals",
-  "Promotes healthy gut microbiome",
-  "Safe for all ages - kids to seniors",
+    { text: "Fertility Booster", icon: <Leaf /> },
+    { text: "Postpartum Nourishment", icon: <Sprout /> },
+    { text: "Improves Gut Health", icon: <Brain /> },
+    { text: "Naturally Sweet, No Added Sugar", icon: <Leaf /> },
+    { text: "Rich in Iron & Fiber", icon: <Sprout /> },
 ];
 
 const ingredients = [
@@ -38,6 +38,29 @@ const ingredients = [
     },
 ];
 
+const howToUse = [
+    {
+        title: "Toast Topper",
+        description: "Spread on warm toast for a delicious and nutritious breakfast.",
+        icon: <Sandwich />
+    },
+    {
+        title: "String Hopper Topping",
+        description: "A healthy and tasty topping for traditional string hoppers.",
+        icon: <Utensils />
+    },
+    {
+        title: "Chapati / Paratha Filling",
+        description: "Use as a sweet and savory filling for your flatbreads.",
+        icon: <Soup />
+    },
+    {
+        title: "Baby Food / Postpartum Porridge",
+        description: "A nourishing meal for new mothers and a healthy option for babies.",
+        icon: <Soup />
+    }
+];
+
 export default function ProductPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -53,13 +76,13 @@ export default function ProductPage() {
                 />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">SARIRA Fig Malt</h1>
-                <p className="text-xl text-muted-foreground mb-6">With Natural Figs, Grains & Herbal Goodness</p>
+                <h1 className="text-4xl md:text-5xl font-bold text-primary mb-2">SARIRA Fig Malt</h1>
+                <p className="text-xl text-muted-foreground mb-6">Made with Organic Figs & Premium Nuts</p>
                 
                 <div className="flex items-center justify-between bg-secondary/50 p-4 rounded-lg mb-6">
                   <div>
                     <div className="text-3xl font-bold text-primary">₹299</div>
-                    <div className="text-muted-foreground">200g jar</div>
+                    <div className="text-muted-foreground">200g Pouch</div>
                   </div>
                   <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                     Buy Now
@@ -72,7 +95,7 @@ export default function ProductPage() {
                     {benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle2 className="w-5 h-5 text-accent mr-3 mt-1 shrink-0" />
-                        <span className="text-muted-foreground">{benefit}</span>
+                        <span className="text-muted-foreground">{benefit.text}</span>
                       </li>
                     ))}
                   </ul>
@@ -100,7 +123,19 @@ export default function ProductPage() {
                   <AccordionItem value="how-to-use">
                     <AccordionTrigger className="text-xl font-bold text-primary">How to Use</AccordionTrigger>
                     <AccordionContent>
-                      <p className="text-muted-foreground pt-2">Mix one tablespoon with warm milk or water. Enjoy daily for best results.</p>
+                       <ul className="space-y-4 pt-4">
+                        {howToUse.map((item) => (
+                           <li key={item.title} className="flex items-center gap-4">
+                                <div className="text-accent bg-accent/10 p-2 rounded-full">
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-primary">{item.title}</h4>
+                                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                                </div>
+                           </li>
+                        ))}
+                      </ul>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
