@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { YoutubeIcon } from '@/components/icons/YoutubeIcon';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { SariraLogo } from '../icons/SariraLogo';
 
 const exploreLinks = [
@@ -50,7 +50,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-4">Support</h3>
+            <h3 className="text-lg font-bold mb-4 text-accent">Support</h3>
             <ul className="space-y-2">
               {supportLinks.map(link => (
                 <li key={link.label}><Link href={link.href} className="text-primary-foreground/80 hover:text-accent transition">{link.label}</Link></li>
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-4 text-accent">Contact Us</h3>
             <ul className="space-y-3 text-primary-foreground/80">
               <li className="flex items-start">
                 <Mail className="mt-1 mr-3 h-5 w-5 text-accent shrink-0" />
@@ -88,7 +88,3 @@ export function Footer() {
     </footer>
   );
 }
-
-const Clock = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-)
