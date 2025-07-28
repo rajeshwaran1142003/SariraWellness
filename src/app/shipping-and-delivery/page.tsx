@@ -19,33 +19,46 @@ export default function ShippingAndDeliveryPage() {
             </h1>
             <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-xl">Delivery Areas</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                  We currently ship to all major cities and towns across India. If you are in a remote location, please contact us at support@sarirawellness.com to confirm delivery feasibility.
+                <AccordionTrigger className="text-xl">Shipping Coverage & Charges</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground prose">
+                  <ul>
+                    <li>We deliver across India (local areas in Tamil Nadu included), excluding certain remote regions.</li>
+                    <li>Free shipping on prepaid orders above ₹800.</li>
+                    <li>For orders below ₹800, delivery charges vary by location.</li>
+                  </ul>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-xl">Shipping Charges</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                  We offer free shipping on all orders above ₹800. For orders below this amount, a flat shipping fee of ₹70 is applicable.
+                <AccordionTrigger className="text-xl">Order Processing Time</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground prose">
+                    <ul>
+                        <li>Orders placed before 5 PM are processed within 1 business day.</li>
+                        <li>Weekends & public holidays are not processing days.</li>
+                    </ul>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-xl">Processing Timelines</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                  Orders are typically processed within 1-2 business days. You will receive a shipping confirmation email with tracking details once your order is dispatched. Delivery usually takes 3-7 business days depending on your location.
+                <AccordionTrigger className="text-xl">Delivery Timeline</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground prose">
+                    <ul>
+                        <li>Estimated delivery: 6–10 working days across India, depending on your location.</li>
+                        <li>Courier tracking via email or SMS provided at dispatch.</li>
+                    </ul>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger className="text-xl">Failed Delivery</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                  If our shipping partner is unable to deliver the product, we will attempt to contact you. If the order is returned to us, we will issue a refund for the product amount, excluding any shipping charges.
+                <AccordionTrigger className="text-xl">Failed Deliveries or Erroneous Address</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground prose">
+                   <ul>
+                        <li>Customers are responsible for reshipping fees if the order is returned due to incomplete or incorrect address.</li>
+                        <li>SARIRA is not liable for lost packages from address errors.</li>
+                    </ul>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
-                <AccordionTrigger className="text-xl">Order Cancellation</AccordionTrigger>
+                <AccordionTrigger className="text-xl">Order Cancellation & Refund</AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground">
-                  You can cancel your order within 24 hours of placing it for a full refund. Please contact our support team at support@sarirawellness.com with your order details to request a cancellation.
+                  If the order is cancelled before dispatch or cannot be delivered to your location, we issue a full refund—including shipping charges—within 48 business hours of processing.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
