@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, Leaf, Sprout, Brain, Utensils, Sandwich, Soup } from 'lucide-react';
+import { CheckCircle2, Leaf, Sprout, Brain, Utensils, Sandwich, Soup, Baby } from 'lucide-react';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import SariraFigMalt from '@/components/icons/SariraFigMalt';
@@ -41,23 +41,23 @@ const ingredients = [
 const howToUse = [
     {
         title: "Toast Topper",
-        description: "Spread on warm toast for a delicious and nutritious breakfast.",
+        description: "Spread ghee or nut butter on warm toast, then sprinkle 1 tsp of Fig Malt on top. Slightly melts and caramelizes—kids love it!",
         icon: <Sandwich />
     },
     {
         title: "String Hopper Topping",
-        description: "A healthy and tasty topping for traditional string hoppers.",
+        description: "Mix Fig Malt with grated coconut and serve over warm string hoppers for a traditional-style sweet breakfast.",
         icon: <Utensils />
     },
     {
         title: "Chapati / Paratha Filling",
-        description: "Use as a sweet and savory filling for your flatbreads.",
+        description: "Add Fig Malt and chopped nuts into a folded chapati or roll for a hidden energy-boosting surprise inside every bite!",
         icon: <Soup />
     },
     {
-        title: "Baby Food / Postpartum Porridge",
-        description: "A nourishing meal for new mothers and a healthy option for babies.",
-        icon: <Soup />
+        title: "Toddler & Postpartum Meal",
+        description: "Add to ragi/millet kanji, mashed bananas, or dal mash for a gentle, sweet, and nutrient-packed meal.",
+        icon: <Baby />
     }
 ];
 

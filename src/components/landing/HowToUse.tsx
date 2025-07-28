@@ -4,22 +4,22 @@ import { Utensils, Sandwich, Soup, Baby } from 'lucide-react';
 const uses = [
     {
         title: "Toast Topper",
-        description: "Spread on warm toast for a delicious and nutritious breakfast.",
+        description: "Spread ghee or nut butter on warm toast, then sprinkle 1 tsp of Fig Malt on top. Slightly melts and caramelizes—kids love it!",
         icon: <Sandwich />
     },
     {
         title: "String Hopper Topping",
-        description: "A healthy and tasty topping for traditional string hoppers.",
+        description: "Mix Fig Malt with grated coconut and serve over warm string hoppers for a traditional-style sweet breakfast.",
         icon: <Utensils />
     },
     {
         title: "Chapati / Paratha Filling",
-        description: "Use as a sweet and savory filling for your flatbreads.",
+        description: "Add Fig Malt and chopped nuts into a folded chapati or roll for a hidden energy-boosting surprise inside every bite!",
         icon: <Soup />
     },
     {
-        title: "Baby Food / Postpartum Porridge",
-        description: "A nourishing meal for new mothers and a healthy option for babies.",
+        title: "Toddler & Postpartum Meal",
+        description: "Add to ragi/millet kanji, mashed bananas, or dal mash for a gentle, sweet, and nutrient-packed meal.",
         icon: <Baby />
     }
 ];
@@ -34,14 +34,14 @@ export function HowToUse() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {uses.map((use, index) => (
-            <Card key={index} className="text-center">
+            <Card key={index} className="text-center h-full flex flex-col">
               <CardHeader>
                 <div className="mx-auto bg-accent/10 text-accent p-4 rounded-full w-fit mb-4">
                   {use.icon}
                 </div>
                 <CardTitle>{use.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <p className="text-muted-foreground">{use.description}</p>
               </CardContent>
             </Card>
