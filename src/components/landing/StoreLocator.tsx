@@ -21,20 +21,6 @@ export function StoreLocator() {
                 </div>
                 <Button className="w-full bg-accent text-accent-foreground">Search</Button>
 
-                <div className="mt-8 space-y-4">
-                    <Card>
-                        <CardContent className="p-4">
-                            <h3 className="font-semibold text-primary">Organic Needs, Chennai</h3>
-                            <p className="text-sm text-muted-foreground">123, Gandhi Road, Adyar, Chennai - 600020</p>
-                        </CardContent>
-                    </Card>
-                     <Card>
-                        <CardContent className="p-4">
-                            <h3 className="font-semibold text-primary">Pure & Sure, Coimbatore</h3>
-                            <p className="text-sm text-muted-foreground">45, RS Puram, Coimbatore - 641002</p>
-                        </CardContent>
-                    </Card>
-                </div>
             </div>
             <div className="h-96 w-full rounded-lg overflow-hidden shadow-lg">
                 <Image src="https://placehold.co/800x600.png" data-ai-hint="map india" alt="Map of stores" width={800} height={600} className="w-full h-full object-cover"/>
