@@ -19,7 +19,7 @@ const posts = [
     link: "#"
   },
   {
-    title: "Postpartum Wellness with Plant-Based Nutrition",
+    title: "Safe for all ages – kids to seniors",
     description: "Nourish your body and mind after childbirth with these gentle, effective plant-based wellness tips.",
     image: "https://placehold.co/800x600.png",
     hint: "mother baby food",
