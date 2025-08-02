@@ -53,7 +53,7 @@ export function Community() {
             <CardContent>
               <p className="mb-6 text-primary-foreground/80">Become an authorized SARIRA reseller and bring authentic Tamil wellness products to your community.</p>
               <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                 <Link href="mailto:support@sarirawellness.com">Become a Reseller</Link>
+                 <Link href="mailto:sariranutrition@gmail.com">Become a Reseller</Link>
               </Button>
             </CardContent>
           </Card>

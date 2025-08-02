@@ -21,7 +21,7 @@ export default function ReturnsAndRefundsPage() {
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-xl">Return Policy</AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground">
-                  We accept returns of unopened items in their original packaging within 7 days of delivery. To initiate a return, please contact us at support@sarirawellness.com.
+                  We accept returns of unopened items in their original packaging within 7 days of delivery. To initiate a return, please contact us at sariranutrition@gmail.com.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
@@ -45,7 +45,7 @@ export default function ReturnsAndRefundsPage() {
                <AccordionItem value="item-5">
                 <AccordionTrigger className="text-xl">Support</AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground">
-                  For any questions regarding returns or refunds, please contact us via WhatsApp or email at support@sarirawellness.com.
+                  For any questions regarding returns or refunds, please contact us via WhatsApp or email at sariranutrition@gmail.com.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

@@ -70,7 +70,7 @@ export default function TermsOfServicePage() {
             <h2>Contact Us</h2>
             <p>For questions about these Terms, contact us at:</p>
             <p>
-              Email: <a href="mailto:support@sarirawellness.com">support@sarirawellness.com</a>
+              Email: <a href="mailto:sariranutrition@gmail.com">sariranutrition@gmail.com</a>
               <br />
               Phone: <a href="tel:+917010422748">+91-7010422748</a>
             </p>

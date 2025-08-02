@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
                 <li>Opt out of promotional emails at any time</li>
                 <li>Request account deactivation</li>
             </ul>
-            <p>For any of the above, email us at support@sarirawellness.com.</p>
+            <p>For any of the above, email us at sariranutrition@gmail.com.</p>
 
             <h2>7. Children’s Privacy</h2>
             <p>Our products are intended for purchase by adults. We do not knowingly collect personal data from children under 18.</p>
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
               <br />
               SARIRA Wellness
               <br />
-              Email: support@sarirawellness.com
+              Email: sariranutrition@gmail.com
               <br />
               Phone: +91-7010422748
               <br />

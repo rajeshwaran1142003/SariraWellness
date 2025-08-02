@@ -63,7 +63,7 @@ export function Footer() {
             <ul className="space-y-3 text-primary-foreground/80">
               <li className="flex items-start">
                 <Mail className="mt-1 mr-3 h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:support@sarirawellness.com">support@sarirawellness.com</a>
+                <a href="mailto:sariranutrition@gmail.com">sariranutrition@gmail.com</a>
               </li>
               <li className="flex items-start">
                 <Phone className="mt-1 mr-3 h-5 w-5 text-accent shrink-0" />
