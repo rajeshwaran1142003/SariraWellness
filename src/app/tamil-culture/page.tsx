@@ -69,6 +69,28 @@ export default function TamilCulturePage() {
                         </div>
                     </div>
                 </section>
+                <section id="grandmothers-wisdom" className="bg-secondary">
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Grandmother's Wisdom: Ancient Nutrition Practices</h2>
+                        </div>
+                        <div className="prose lg:prose-xl mx-auto text-muted-foreground">
+                            <p className="lead">If your grandmother ran a wellness brand, it would look like SARIRA.</p>
+                            <p>She didn’t need lab reports. Or influencer reviews. She trusted her senses, her soil, and the science passed down on banana leaves — not textbooks.</p>
+                            <p>She didn’t Google immunity boosters. She just made you drink Sukku Kaapi at dawn. And now, modern science is finally agreeing with her. You call it functional food. She called it breakfast. The West calls it gut health. She just told you not to skip vendhaya kanji on Mondays. She didn’t say “anti-inflammatory.” She just reached for turmeric before reaching for the doctor.</p>
+                            <p>Our grandmothers weren’t nutritionists. They were better. They were instinctive scientists with kitchen labs and wooden ladles.</p>
+                            
+                            <h3 className="text-primary">Why SARIRA Exists: Because We Owe Them.</h3>
+                            <p>We didn’t invent anything. We simply bottled what they believed in.</p>
+                            <p>SARIRA Fig Malt is not just another health mix. It’s our grandmother’s legacy — nutritionally enhanced, beautifully packaged, and made for modern life.</p>
+                            <ul>
+                                <li>For young mothers looking for clean postnatal nutrition.</li>
+                                <li>For children needing fiber, iron, and fuss-free energy.</li>
+                                <li>For families who want trust over trend.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
