@@ -91,6 +91,16 @@ export default function TamilCulturePage() {
                         </div>
                     </div>
                 </section>
+                <section id="gut-health" className="bg-white">
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why Gut Health Matters</h2>
+                        </div>
+                        <div className="prose lg:prose-xl mx-auto text-muted-foreground">
+                            <p>Did you know that your gut is home to over 70% of your immune system? Modern science now confirms what Tamil culture has practiced for generations — a healthy gut is key to a healthy life. From digestion and energy to mood and immunity, your gut microbiome influences it all. But before probiotics became global buzzwords, Tamil households had already mastered the art of digestive wellness — with food, not formulas.</p>
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
