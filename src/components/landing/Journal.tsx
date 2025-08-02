@@ -12,7 +12,7 @@ const posts = [
     link: "#"
   },
   {
-    title: "Natural Fertility Boosters",
+    title: "Rich in antioxidants and essential minerals",
     description: "Learn how plant-based nutrition, including powerful ingredients like figs, can support your fertility journey.",
     image: "https://placehold.co/800x600.png",
     hint: "woman healthy food",
