@@ -73,10 +73,6 @@ export function Footer() {
                 <MapPin className="mt-1 mr-3 h-5 w-5 text-accent shrink-0" />
                 <span>Chennai, Tamil Nadu</span>
               </li>
-               <li className="flex items-start">
-                <Clock className="mt-1 mr-3 h-5 w-5 text-accent shrink-0" />
-                <span>Mon – Sat, 10AM – 6PM</span>
-              </li>
             </ul>
           </div>
         </div>
