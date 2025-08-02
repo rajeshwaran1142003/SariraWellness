@@ -27,13 +27,13 @@ export function Community() {
             <CardContent className="flex flex-col flex-grow">
               <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80 min-h-[140px]">Join our growing community of families who prioritize natural wellness. Get access to exclusive content and special offers.</CardDescription>
               <div className="space-y-4 mt-auto">
-                <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                  <Link href="https://wa.me/917010422748" target="_blank">Join on WhatsApp</Link>
-                </Button>
                  <div className="flex items-center justify-center space-x-4">
                     <Link href="https://www.instagram.com/sarira.wellness" target="_blank" className="text-primary group-hover:text-primary-foreground hover:text-accent"><Instagram className="w-7 h-7" /></Link>
                     <Link href="#" className="text-primary group-hover:text-primary-foreground hover:text-accent"><Facebook className="w-7 h-7" /></Link>
                 </div>
+                <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
+                  <Link href="https://wa.me/917010422748" target="_blank">Join on WhatsApp</Link>
+                </Button>
               </div>
             </CardContent>
           </Card>
