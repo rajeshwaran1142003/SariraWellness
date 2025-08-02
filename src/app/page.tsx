@@ -12,7 +12,6 @@ import { HowToUse } from '@/components/landing/HowToUse';
 import { Recipes } from '@/components/landing/Recipes';
 import { StoreLocator } from '@/components/landing/StoreLocator';
 import { Faq } from '@/components/landing/Faq';
-import { TamilCulture } from '@/components/landing/TamilCulture';
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <About />
-        <TamilCulture />
         <Product />
         <HowToUse />
         <Recipes />
