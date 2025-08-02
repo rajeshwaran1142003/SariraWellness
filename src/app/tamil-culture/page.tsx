@@ -52,6 +52,23 @@ export default function TamilCulturePage() {
                         </div>
                     </div>
                 </section>
+                <section id="sarira-way" className="bg-white">
+                    <div className="container mx-auto px-4">
+                         <div className="text-center mb-12 max-w-4xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">The SARIRA Way: Ancient Wisdom, Modern Nutrition</h2>
+                        </div>
+                        <div className="max-w-4xl mx-auto text-lg text-muted-foreground space-y-6">
+                            <p>SARIRA Fig Malt is crafted to honor this heritage — combining traditional fig-based healing with clean, everyday convenience. It’s more than a supplement. It’s a daily wellness companion made for:</p>
+                            <ul className="space-y-3 pl-5 list-disc">
+                                <li>Growing children</li>
+                                <li>New moms</li>
+                                <li>Working professionals</li>
+                                <li>Active elders</li>
+                            </ul>
+                            <p>Enjoy it with warm milk, smoothies, or your favorite recipes — the possibilities are endless.</p>
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
