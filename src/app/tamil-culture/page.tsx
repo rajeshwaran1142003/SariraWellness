@@ -101,6 +101,56 @@ export default function TamilCulturePage() {
                         </div>
                     </div>
                 </section>
+                <section id="probiotic-practices" className="bg-secondary">
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">The Original Probiotic Practices of Tamil Nadu</h2>
+                        </div>
+                        <div className="prose lg:prose-xl mx-auto text-muted-foreground">
+                            <p>Traditional Tamil meals weren’t just cooked for taste. They were engineered for gut health. Passed down through generations, these practices supported microbiome diversity, detoxification, and regular digestion. Let’s explore some timeless gut-healing habits:</p>
+                            <div className="overflow-x-auto my-8">
+                                <table className="min-w-full">
+                                    <thead className="bg-primary/10">
+                                        <tr>
+                                            <th className="py-3 px-4 text-left font-semibold text-primary">Traditional Practice</th>
+                                            <th className="py-3 px-4 text-left font-semibold text-primary">Gut Health Benefit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="border-b">
+                                            <td className="py-3 px-4">Pazhaya Sadham (fermented rice)</td>
+                                            <td className="py-3 px-4">Natural probiotics + resistant starch for microbiota</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="py-3 px-4">Buttermilk with curry leaves</td>
+                                            <td className="py-3 px-4">Promotes gut flora and cools internal heat</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="py-3 px-4">Rasam with Jeera & Ajwain</td>
+                                            <td className="py-3 px-4">Aids in digestion, relieves gas and bloating</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="py-3 px-4">Banana Stem / Flower Stir-fry</td>
+                                            <td className="py-3 px-4">High in fiber, supports detox and regular bowel movement</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="py-3 px-4">Pickled Gooseberry (Nellikai Oorugai)</td>
+                                            <td className="py-3 px-4">Rich in antioxidants and lactic acid cultures</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h3 className="text-primary">How It Compares with Modern Gut Trends</h3>
+                            <p>Today’s probiotic capsules offer isolated strains like Lactobacillus or Bifidobacterium. But Tamil recipes offer a full-spectrum ecosystem — a combination of:</p>
+                            <ul>
+                                <li><strong>Probiotics</strong> from fermentation</li>
+                                <li><strong>Prebiotics</strong> from fiber-rich foods</li>
+                                <li><strong>Digestive enzymes</strong> from spices like cumin and ginger</li>
+                            </ul>
+                            <p>And they’re delicious, time-tested, and natural.</p>
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
