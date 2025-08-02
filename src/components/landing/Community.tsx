@@ -2,10 +2,12 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, Store, Instagram, Facebook, Utensils } from 'lucide-react';
+import { Home, Store, Instagram, Facebook, Utensils, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+
 
 export function Community() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,7 +29,7 @@ export function Community() {
             <CardContent className="flex flex-col flex-grow">
               <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80 min-h-[140px]">Join our growing community of families who prioritize natural wellness. Get access to exclusive content and special offers.</CardDescription>
               <div className="space-y-4 mt-auto">
-                 <div className="flex items-center justify-center space-x-4">
+                 <div className="flex items-center justify-center space-x-4 mb-4">
                     <Link href="https://www.instagram.com/sarira.wellness" target="_blank" className="text-primary group-hover:text-primary-foreground hover:text-accent"><Instagram className="w-7 h-7" /></Link>
                     <Link href="#" className="text-primary group-hover:text-primary-foreground hover:text-accent"><Facebook className="w-7 h-7" /></Link>
                 </div>
@@ -68,9 +70,47 @@ export function Community() {
                   </Button>
               </div>
               <div className="mt-auto">
-                <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                   <Link href="mailto:sariranutrition@gmail.com">Become a Reseller</Link>
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
+                      Become a Reseller
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[525px]">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl text-primary">Partner with SARIRA</DialogTitle>
+                      <DialogDescription>
+                        Let’s build a healthier community — together.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="py-4">
+                      <div className="mb-6">
+                        <h4 className="font-bold text-lg text-primary mb-3">Why Partner with Us?</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Attractive wholesale pricing</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Clean-label, fast-moving wellness product</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Exclusive Tamil Nadu regional branding</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Free marketing support and digital assets</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Low MOQ (Minimum Order Quantity) to get started</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg text-primary mb-3">Who Can Apply?</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Organic and health food stores</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Baby product shops</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Pharmacies</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Department stores and Kirana outlets</li>
+                          <li className="flex items-start"><CheckCircle2 className="w-5 h-5 text-accent mr-2 mt-0.5 shrink-0" />Ayurvedic wellness centres</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <Button asChild size="lg">
+                      <Link href="mailto:sariranutrition@gmail.com">Become a Reseller →</Link>
+                    </Button>
+                    <p className="text-xs text-center text-muted-foreground pt-2">Start your SARIRA partnership today.</p>
+                  </DialogContent>
+                </Dialog>
               </div>
             </CardContent>
           </Card>
