@@ -19,14 +19,14 @@ export function Community() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          <Card className="bg-secondary/50 border-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group">
+          <Card className="bg-secondary/50 border-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group flex flex-col">
             <CardHeader>
               <div className="text-accent group-hover:text-accent mb-4"><Home className="w-10 h-10" /></div>
               <CardTitle className="text-2xl font-bold text-primary group-hover:text-primary-foreground">For Families</CardTitle>
             </CardHeader>
-            <CardContent>
-              <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80">Join our growing community of families who prioritize natural wellness. Get access to exclusive content and special offers.</CardDescription>
-              <div className="space-y-4">
+            <CardContent className="flex flex-col flex-grow">
+              <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80 min-h-[140px]">Join our growing community of families who prioritize natural wellness. Get access to exclusive content and special offers.</CardDescription>
+              <div className="space-y-4 mt-auto">
                 <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
                   <Link href="https://wa.me/917010422748" target="_blank">Join on WhatsApp</Link>
                 </Button>
@@ -38,31 +38,33 @@ export function Community() {
             </CardContent>
           </Card>
           
-          <Card className="bg-secondary/50 border-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group">
+          <Card className="bg-secondary/50 border-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group flex flex-col">
             <CardHeader>
               <div className="text-accent group-hover:text-accent mb-4"><Utensils className="w-10 h-10" /></div>
               <CardTitle className="text-2xl font-bold text-primary group-hover:text-primary-foreground">Nourishing Recipes</CardTitle>
             </CardHeader>
-            <CardContent>
-              <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80">Discover creative and delicious ways to incorporate SARIRA Fig Malt into your daily meals and snacks.</CardDescription>
-              <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
+            <CardContent className="flex flex-col flex-grow">
+              <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80 min-h-[140px]">Discover creative and delicious ways to incorporate SARIRA Fig Malt into your daily meals and snacks.</CardDescription>
+              <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-auto" size="lg">
                  <Link href="/#recipes">Explore Recipes</Link>
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-secondary/50 border-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group">
+          <Card className="bg-secondary/50 border-primary/10 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group flex flex-col">
             <CardHeader>
               <div className="text-accent group-hover:text-accent mb-4"><Store className="w-10 h-10" /></div>
               <CardTitle className="text-2xl font-bold text-primary group-hover:text-primary-foreground">For Stores &amp; Retailers</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col h-full">
-              <p className={cn("text-muted-foreground group-hover:text-primary-foreground/80 mb-4 transition-all duration-300", { 'line-clamp-3': !isExpanded })}>
-                Bring SARIRA to Your Shelf — and to Your Community. Join our growing network of trusted resellers bringing authentic Tamil wellness to homes across India. Whether you run a health store, organic outlet, or neighborhood supermarket, SARIRA Fig Malt is the perfect addition to your shelf.
-              </p>
-               <Button variant="link" onClick={() => setIsExpanded(!isExpanded)} className="text-accent p-0 h-auto self-start mb-4">
-                  {isExpanded ? 'Read Less' : 'Read More'}
-                </Button>
+            <CardContent className="flex flex-col flex-grow">
+              <div className="min-h-[140px]">
+                <p className={cn("text-muted-foreground group-hover:text-primary-foreground/80 mb-4 transition-all duration-300", { 'line-clamp-3': !isExpanded })}>
+                  Bring SARIRA to Your Shelf — and to Your Community. Join our growing network of trusted resellers bringing authentic Tamil wellness to homes across India. Whether you run a health store, organic outlet, or neighborhood supermarket, SARIRA Fig Malt is the perfect addition to your shelf.
+                </p>
+                 <Button variant="link" onClick={() => setIsExpanded(!isExpanded)} className="text-accent p-0 h-auto self-start mb-4">
+                    {isExpanded ? 'Read Less' : 'Read More'}
+                  </Button>
+              </div>
               <div className="mt-auto">
                 <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
                    <Link href="mailto:sariranutrition@gmail.com">Become a Reseller</Link>
