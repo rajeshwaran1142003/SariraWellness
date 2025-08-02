@@ -45,9 +45,11 @@ export function Community() {
             </CardHeader>
             <CardContent className="flex flex-col flex-grow">
               <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80 min-h-[140px]">Discover creative and delicious ways to incorporate SARIRA Fig Malt into your daily meals and snacks.</CardDescription>
-              <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-auto" size="lg">
-                 <Link href="/#recipes">Explore Recipes</Link>
-              </Button>
+              <div className="mt-auto">
+                <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
+                    <Link href="/#recipes">Explore Recipes</Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -57,7 +59,7 @@ export function Community() {
               <CardTitle className="text-2xl font-bold text-primary group-hover:text-primary-foreground">For Stores &amp; Retailers</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col flex-grow">
-              <div className="min-h-[140px]">
+              <div className="flex-grow">
                 <p className={cn("text-muted-foreground group-hover:text-primary-foreground/80 mb-4 transition-all duration-300", { 'line-clamp-3': !isExpanded })}>
                   Bring SARIRA to Your Shelf — and to Your Community. Join our growing network of trusted resellers bringing authentic Tamil wellness to homes across India. Whether you run a health store, organic outlet, or neighborhood supermarket, SARIRA Fig Malt is the perfect addition to your shelf.
                 </p>
