@@ -48,7 +48,7 @@ export function Community() {
           <Card className="bg-primary text-primary-foreground">
             <CardHeader>
               <div className="text-accent mb-4"><Store className="w-10 h-10" /></div>
-              <CardTitle className="text-2xl font-bold text-primary-foreground">For Stores</CardTitle>
+              <CardTitle className="text-2xl font-bold text-primary-foreground">For Stores &amp; Retailers</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="mb-6 text-primary-foreground/80">Bring SARIRA to Your Shelf — and to Your Community. Join our growing network of trusted resellers bringing authentic Tamil wellness to homes across India. Whether you run a health store, organic outlet, or neighborhood supermarket, SARIRA Fig Malt is the perfect addition to your shelf.</p>
