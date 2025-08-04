@@ -5,25 +5,25 @@ import Link from 'next/link';
 
 const posts = [
   {
-    title: "The Role of Figs in Tamil Tradition",
-    description: "Discover the ancient wisdom and health benefits of figs in traditional Tamil culture and cuisine.",
-    image: "https://placehold.co/800x600.png",
+    title: "The Unsung Hero of Tamil Kitchens: The Humble Fig",
+    description: "Long before superfoods became a buzzword, the fig (അத்திப்பழം) was a cornerstone of wellness in Tamil households. We explore its journey from ancient scriptures to your kitchen.",
+    image: "https://storage.googleapis.com/stedi-dev-images/sarira-journal-1.png",
     hint: "figs on a plate",
-    link: "#"
+    link: "/tamil-culture"
   },
   {
-    title: "Rich in antioxidants and essential minerals",
-    description: "Learn how plant-based nutrition, including powerful ingredients like figs, can support your fertility journey.",
-    image: "https://placehold.co/800x600.png",
-    hint: "woman healthy food",
-    link: "#"
-  },
-  {
-    title: "Safe for all ages – kids to seniors",
-    description: "Nourish your body and mind after childbirth with these gentle, effective plant-based wellness tips.",
-    image: "https://placehold.co/800x600.png",
+    title: "Postpartum Care, the Paatti Way: A Guide for New Mothers",
+    description: "A new mother's body is a temple deserving of gentle, powerful nourishment. Learn how traditional Tamil postpartum care focuses on healing from within, with ingredients that restore strength and balance.",
+    image: "https://storage.googleapis.com/stedi-dev-images/sarira-journal-2.png",
     hint: "mother baby food",
-    link: "#"
+    link: "/tamil-culture"
+  },
+  {
+    title: "Why Your Gut Is Your Second Brain: A Tamil Perspective",
+    description: "Modern science is catching up to what Tamil grandmothers always knew: a healthy gut is the key to overall well-being. Dive into the timeless food habits that promote a thriving inner ecosystem.",
+    image: "https://storage.googleapis.com/stedi-dev-images/sarira-journal-3.png",
+    hint: "healthy food bowl",
+    link: "/tamil-culture"
   }
 ];
 
@@ -57,7 +57,7 @@ export function Journal() {
         
         <div className="text-center mt-12">
           <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-            <Link href="#">View All Articles</Link>
+            <Link href="/tamil-culture">Explore Our Heritage</Link>
           </Button>
         </div>
       </div>

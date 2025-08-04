@@ -12,6 +12,7 @@ import { HowToUse } from '@/components/landing/HowToUse';
 import { Recipes } from '@/components/landing/Recipes';
 import { StoreLocator } from '@/components/landing/StoreLocator';
 import { Faq } from '@/components/landing/Faq';
+import { Testimonials } from '@/components/landing/Testimonials';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <Product />
         <HowToUse />
         <Recipes />
+        <Testimonials />
         <Gallery />
         <Journal />
         <Community />
