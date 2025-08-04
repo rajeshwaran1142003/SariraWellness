@@ -37,7 +37,7 @@ export function Header() {
     )}>
       <div className="container mx-auto px-4 flex justify-between items-center py-2">
         <Link href="/" className="text-2xl font-bold font-headline text-primary">
-          <SariraLogo className="h-14 w-auto" />
+          <SariraLogo className="h-14" />
         </Link>
         <nav className="hidden md:flex space-x-6 items-center">
           {navLinks.map(link => (
@@ -62,7 +62,7 @@ export function Header() {
       )}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" onClick={closeMenu} className="text-2xl font-bold font-headline text-primary">
-              <SariraLogo className="h-14 w-auto"/>
+              <SariraLogo className="h-14"/>
             </Link>
             <Button onClick={closeMenu} variant="ghost" size="icon">
               <X className="h-6 w-6 text-primary" />
