@@ -38,11 +38,11 @@ export function Hero() {
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
         <div className="w-full text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary mb-4">
+            <p className="text-accent font-headline mb-2 text-2xl">Welcome to SARIRA Wellness</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-body text-primary mb-4">
                 {typedText}
                 <span className="opacity-50 animate-ping">|</span>
             </h1>
-            <p className="text-accent font-body mb-2 text-2xl">Welcome to SARIRA Wellness</p>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Ancient Tamil wisdom meets modern nutrition. Discover SARIRA's Fig Malt — your gateway to holistic wellness, crafted with time-honored traditions.
