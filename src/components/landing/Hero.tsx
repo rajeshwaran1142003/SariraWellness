@@ -1,12 +1,9 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import SariraFigMalt from '../icons/SariraFigMalt';
 
 const benefits = [
     { text: "Fertility Boost", icon: <HeartPulse /> },
@@ -19,7 +16,6 @@ export function Hero() {
   const [typedText, setTypedText] = useState('');
   const textToType = "Feed Your Roots. Fuel Your Rise.";
   const [isMounted, setIsMounted] = useState(false);
-  const [floating, setFloating] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -27,14 +23,12 @@ export function Hero() {
 
   useEffect(() => {
     if (isMounted) {
-      const animationTimeout = setTimeout(() => setFloating(true), 500); // Delay floating animation
       if (typedText.length < textToType.length) {
         const typingTimeout = setTimeout(() => {
           setTypedText(textToType.slice(0, typedText.length + 1));
         }, 50);
         return () => clearTimeout(typingTimeout);
       }
-      return () => clearTimeout(animationTimeout);
     }
   }, [isMounted, typedText]);
 
@@ -42,14 +36,14 @@ export function Hero() {
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
-        <div className="w-full text-center">
+        <div className="w-full lg:w-3/4 text-center">
             <p className="text-accent font-semibold mb-2 text-lg">Welcome to SARIRA Wellness</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[72px]">
             {typedText}
             <span className="opacity-50 animate-ping">|</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-            Functional wellness rooted in Tamil tradition, blended for today's lifestyle.
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Ancient Tamil wisdom meets modern nutrition. Discover SARIRA's Fig Malt — your gateway to holistic wellness, crafted with time-honored traditions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
