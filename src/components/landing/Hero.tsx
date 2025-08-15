@@ -27,22 +27,24 @@ export function Hero() {
 
   useEffect(() => {
     if (isMounted) {
-        setFloating(true);
+      const animationTimeout = setTimeout(() => setFloating(true), 500); // Delay floating animation
       if (typedText.length < textToType.length) {
-        const timeoutId = setTimeout(() => {
+        const typingTimeout = setTimeout(() => {
           setTypedText(textToType.slice(0, typedText.length + 1));
         }, 50);
-        return () => clearTimeout(timeoutId);
+        return () => clearTimeout(typingTimeout);
       }
+      return () => clearTimeout(animationTimeout);
     }
   }, [isMounted, typedText]);
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
-      <div className="container mx-auto px-4 flex flex-col items-center relative z-10">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
         <div className="w-full text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[192px]">
+            <p className="text-accent font-semibold mb-2 text-lg">Welcome to SARIRA Wellness</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[72px]">
             {typedText}
             <span className="opacity-50 animate-ping">|</span>
           </h1>
