@@ -24,19 +24,19 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    if (typedText.length < textToType.length) {
+    if (isMounted && typedText.length < textToType.length) {
       const timeoutId = setTimeout(() => {
         setTypedText(textToType.slice(0, typedText.length + 1));
       }, 50);
       return () => clearTimeout(timeoutId);
     }
-  }, [typedText]);
+  }, [isMounted, typedText]);
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
-        <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+        <div className="w-full text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[192px]">
             {typedText}
             <span className="opacity-50 animate-ping">|</span>
@@ -60,16 +60,6 @@ export function Hero() {
                     </div>
                 ))}
             </div>
-        </div>
-        <div className="md:w-1/2 flex justify-center">
-            <Image
-                src="https://storage.googleapis.com/stedi-dev-images/sarira-fig-malt.png"
-                alt="SARIRA Fig Malt"
-                width={500}
-                height={500}
-                priority
-                className={cn("w-full max-w-md rounded-lg shadow-2xl", isMounted && "animate-floating")}
-            />
         </div>
       </div>
     </section>
