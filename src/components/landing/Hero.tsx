@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const benefits = [
     { text: "Fertility Boost", icon: <HeartPulse /> },
@@ -16,6 +17,11 @@ const benefits = [
 export function Hero() {
   const [typedText, setTypedText] = useState('');
   const textToType = "Feed Your Roots. Fuel Your Rise.";
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (typedText.length < textToType.length) {
@@ -62,7 +68,7 @@ export function Hero() {
                 width={500}
                 height={500}
                 priority
-                className="w-full max-w-md rounded-lg shadow-2xl animate-floating"
+                className={cn("w-full max-w-md rounded-lg shadow-2xl", isMounted && "animate-floating")}
             />
         </div>
       </div>
