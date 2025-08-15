@@ -7,15 +7,15 @@ import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
 const benefits = [
-    { text: "Fertility Boost", icon: <HeartPulse /> },
-    { text: "Postpartum Support", icon: <Baby /> },
-    { text: "Immunity", icon: <ShieldCheck /> },
-    { text: "No Preservatives", icon: <Sparkles /> }
+    { text: "Fertility Boost", icon: <HeartPulse className="w-8 h-8" /> },
+    { text: "Postpartum Support", icon: <Baby className="w-8 h-8" /> },
+    { text: "Immunity", icon: <ShieldCheck className="w-8 h-8" /> },
+    { text: "No Preservatives", icon: <Sparkles className="w-8 h-8" /> }
 ];
 
 export function Hero() {
   const [typedText, setTypedText] = useState('');
-  const textToType = "Welcome to SARIRA Wellness";
+  const textToType = "Feed Your Roots. Fuel Your Rise.";
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -38,11 +38,11 @@ export function Hero() {
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
         <div className="w-full text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary mb-4">
                 {typedText}
                 <span className="opacity-50 animate-ping">|</span>
             </h1>
-            <p className="text-accent font-semibold mb-2 text-[26px]">Feed Your Roots. Fuel Your Rise.</p>
+            <p className="text-accent font-body mb-2 text-2xl">Welcome to SARIRA Wellness</p>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Ancient Tamil wisdom meets modern nutrition. Discover SARIRA's Fig Malt — your gateway to holistic wellness, crafted with time-honored traditions.
@@ -57,9 +57,9 @@ export function Hero() {
           </div>
            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
                 {benefits.map(benefit => (
-                    <div key={benefit.text} className="flex flex-col items-center gap-2">
+                    <div key={benefit.text} className="flex flex-col items-center gap-3">
                         <div className="text-accent">{benefit.icon}</div>
-                        <span className="text-sm font-medium text-primary">{benefit.text}</span>
+                        <span className="text-base font-medium text-primary">{benefit.text}</span>
                     </div>
                 ))}
             </div>
