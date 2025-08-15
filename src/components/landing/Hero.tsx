@@ -15,7 +15,7 @@ const benefits = [
 
 export function Hero() {
   const [typedText, setTypedText] = useState('');
-  const textToType = "Feed Your Roots. Fuel Your Rise.";
+  const textToType = "Welcome to SARIRA Wellness";
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -38,11 +38,12 @@ export function Hero() {
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
         <div className="w-full text-center">
-            <p className="text-accent font-semibold mb-2 text-[26px]">Welcome to SARIRA Wellness</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[72px]">
-            {typedText}
-            <span className="opacity-50 animate-ping">|</span>
-          </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+                {typedText}
+                <span className="opacity-50 animate-ping">|</span>
+            </h1>
+            <p className="text-accent font-semibold mb-2 text-[26px]">Feed Your Roots. Fuel Your Rise.</p>
+          
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Ancient Tamil wisdom meets modern nutrition. Discover SARIRA's Fig Malt — your gateway to holistic wellness, crafted with time-honored traditions.
           </p>
