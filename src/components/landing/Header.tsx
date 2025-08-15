@@ -36,7 +36,7 @@ export function Header() {
       isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-transparent',
     )}>
       <div className="container mx-auto px-4 flex justify-between items-center py-2">
-        <Link href="/" className="text-2xl font-bold font-headline text-primary">
+        <Link href="/" className="text-primary">
           <SariraLogo className="h-14" />
         </Link>
         <nav className="hidden md:flex space-x-6 items-center">
@@ -61,7 +61,7 @@ export function Header() {
         isOpen ? 'translate-x-0' : '-translate-x-full'
       )}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" onClick={closeMenu} className="text-2xl font-bold font-headline text-primary">
+            <Link href="/" onClick={closeMenu} className="text-primary">
               <SariraLogo className="h-14"/>
             </Link>
             <Button onClick={closeMenu} variant="ghost" size="icon">
