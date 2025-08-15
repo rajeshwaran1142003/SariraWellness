@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 const benefits = [
     { text: "Fertility Boost", icon: <HeartPulse /> },
@@ -30,14 +31,14 @@ export function Hero() {
         return () => clearTimeout(typingTimeout);
       }
     }
-  }, [isMounted, typedText]);
+  }, [isMounted, typedText, textToType]);
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
-        <div className="w-full lg:w-3/4 text-center">
-            <p className="text-accent font-semibold mb-2 text-lg">Welcome to SARIRA Wellness</p>
+        <div className="w-full text-center">
+            <p className="text-accent font-semibold mb-2 text-[26px]">Welcome to SARIRA Wellness</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 min-h-[144px] md:min-h-[168px] lg:min-h-[72px]">
             {typedText}
             <span className="opacity-50 animate-ping">|</span>
