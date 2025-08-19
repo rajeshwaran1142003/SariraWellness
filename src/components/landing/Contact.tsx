@@ -3,10 +3,43 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { User, Mail, Phone, MessageSquare, Send } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Phone, Mail, Clock, MapPin, MessageSquare, Send, User } from "lucide-react";
+import Link from "next/link";
+import { WhatsappIcon } from "../icons/WhatsappIcon";
+
+const contactInfo = [
+    {
+        icon: <WhatsappIcon className="w-6 h-6 text-accent" />,
+        title: "WhatsApp Support",
+        description: "Quick responses for all your queries",
+        value: "+91-7010422748",
+        href: "https://wa.me/917010422748"
+    },
+    {
+        icon: <Mail className="w-6 h-6 text-accent" />,
+        title: "Email Support",
+        description: "Detailed assistance via email",
+        value: "support@sarirawellness.com",
+        href: "mailto:support@sarirawellness.com"
+    },
+    {
+        icon: <Clock className="w-6 h-6 text-accent" />,
+        title: "Business Hours",
+        description: "Monday - Saturday: 10:00 AM - 6:00 PM",
+        value: "Sunday: Closed",
+    },
+    {
+        icon: <MapPin className="w-6 h-6 text-accent" />,
+        title: "Head Office",
+        description: "123 Anna Salai",
+        value: "Chennai, Tamil Nadu - 600002",
+    }
+];
+
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -17,58 +50,111 @@ export function Contact() {
   };
 
   return (
-    <section id="contact-form" className="bg-secondary">
+    <section id="contact-form" className="bg-secondary/50 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch with Us</h2>
-          <p className="text-xl text-muted-foreground">We'd love to hear from you!</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
+          <p className="text-xl text-muted-foreground">We're here to help you with any questions about SARIRA Fig Malt</p>
         </div>
 
-        <Card className="max-w-2xl mx-auto shadow-lg border-primary/10 rounded-2xl">
-           {!submitted ? (
-            <>
-                <CardHeader>
-                    <CardTitle className="text-primary">Contact Form</CardTitle>
-                    <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                        <Label htmlFor="name" className="flex items-center gap-2 text-primary/80"><User className="w-4 h-4" /> Full Name</Label>
-                        <Input id="name" placeholder="Your Name" required className="rounded-xl"/>
+        <div className="grid lg:grid-cols-5 gap-10">
+            {/* Left Column */}
+            <div className="lg:col-span-2">
+                <Card className="p-8 h-full">
+                    <h3 className="text-2xl font-bold text-primary mb-6">Contact Information</h3>
+                    <div className="space-y-6">
+                        {contactInfo.map((item, index) => (
+                            <div key={index} className="flex items-start gap-4">
+                                <div className="bg-accent/10 p-3 rounded-full mt-1">
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-primary">{item.title}</h4>
+                                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                                    {item.href ? (
+                                        <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm text-accent font-medium hover:underline">{item.value}</a>
+                                    ) : (
+                                        <p className="text-sm text-muted-foreground font-medium">{item.value}</p>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <Label htmlFor="email" className="flex items-center gap-2 text-primary/80"><Mail className="w-4 h-4" /> Email Address</Label>
-                            <Input id="email" type="email" placeholder="Your Email" required className="rounded-xl"/>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="phone" className="flex items-center gap-2 text-primary/80"><Phone className="w-4 h-4" /> Phone Number (Optional)</Label>
-                            <Input id="phone" type="tel" placeholder="Your Phone Number" className="rounded-xl"/>
-                        </div>
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="message" className="flex items-center gap-2 text-primary/80"><MessageSquare className="w-4 h-4" /> Message</Label>
-                        <Textarea id="message" placeholder="How can we help you?" required rows={5} className="rounded-xl"/>
-                    </div>
-                    <div className="text-right">
-                        <Button type="submit" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-xl px-6">
-                            <Send className="mr-2 h-4 w-4" /> Send Message
+                    <div className="mt-8 space-y-4">
+                        <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white">
+                            <Link href="https://wa.me/917010422748" target="_blank">
+                                <WhatsappIcon className="mr-2"/> Chat on WhatsApp
+                            </Link>
+                        </Button>
+                         <Button asChild size="lg" variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-accent-foreground">
+                            <Link href="mailto:support@sarirawellness.com">
+                                <Mail className="mr-2"/> Send Email
+                            </Link>
                         </Button>
                     </div>
-                    </form>
-                </CardContent>
-             </>
-          ) : (
-            <CardContent className="p-10 text-center">
-                 <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Send className="w-8 h-8" />
-                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-2">Thank You!</h3>
-                <p className="text-muted-foreground">Thank you for reaching out to SARIRA! We will get back to you soon.</p>
-            </CardContent>
-          )}
-        </Card>
+                </Card>
+            </div>
+
+            {/* Right Column */}
+            <div className="lg:col-span-3">
+                 <Card className="bg-primary/95 text-primary-foreground p-8 shadow-2xl">
+                    <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+                    {!submitted ? (
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <Label htmlFor="first-name" className="text-primary-foreground/80">First Name</Label>
+                                    <Input id="first-name" placeholder="Your first name" required className="bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg"/>
+                                </div>
+                                 <div className="space-y-2">
+                                    <Label htmlFor="last-name" className="text-primary-foreground/80">Last Name</Label>
+                                    <Input id="last-name" placeholder="Your last name" required className="bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg"/>
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="email" className="text-primary-foreground/80">Email</Label>
+                                <Input id="email" type="email" placeholder="your.email@example.com" required className="bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg"/>
+                            </div>
+                             <div className="space-y-2">
+                                <Label htmlFor="phone" className="text-primary-foreground/80">Phone Number</Label>
+                                <Input id="phone" type="tel" placeholder="+91 98765 43210" className="bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg"/>
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="subject" className="text-primary-foreground/80">Subject</Label>
+                                <Select>
+                                    <SelectTrigger id="subject" className="w-full bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg">
+                                        <SelectValue placeholder="Select a subject" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectItem value="general">General Inquiry</SelectItem>
+                                        <SelectItem value="order">Order Support</SelectItem>
+                                        <SelectItem value="feedback">Feedback</SelectItem>
+                                        <SelectItem value="reseller">Reseller Inquiry</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="message" className="text-primary-foreground/80">Message</Label>
+                                <Textarea id="message" placeholder="Tell us how we can help you..." required rows={5} className="bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg"/>
+                            </div>
+                            <div className="text-right">
+                                <Button type="submit" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-xl px-8">
+                                    <Send className="mr-2 h-4 w-4" /> Send Message
+                                </Button>
+                            </div>
+                        </form>
+                    ) : (
+                        <div className="flex flex-col items-center justify-center h-[400px] text-center">
+                            <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <Send className="w-8 h-8" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                            <p className="text-white/80">Thank you for reaching out to SARIRA! We will get back to you soon.</p>
+                        </div>
+                    )}
+                </Card>
+            </div>
+        </div>
       </div>
     </section>
   );
