@@ -10,16 +10,16 @@ const exploreLinks = [
   { href: '/#about', label: 'About' },
   { href: '/product', label: 'Shop' },
   { href: '/#journal', label: 'Journal' },
-  { href: '/#contact-form', label: 'Contact' },
+  { href: '/#contact', label: 'Contact' },
   { href: '/gallery', label: 'Gallery' },
 ];
 
 const supportLinks = [
-    { href: '/#faq-shipping', label: 'Shipping & Delivery' },
-    { href: '/#faq-returns', label: 'Returns & Refunds' },
-    { href: '/#faq-privacy', label: 'Privacy Policy' },
-    { href: '/#faq-terms', label: 'Terms of Service' },
-    { href: '/#faq', label: 'FAQ' },
+    { href: '/#faq?topic=shipping', label: 'Shipping & Delivery' },
+    { href: '/#faq?topic=returns', label: 'Returns & Refunds' },
+    { href: '/#faq?topic=privacy', label: 'Privacy Policy' },
+    { href: '/#faq?topic=terms', label: 'Terms of Service' },
+    { href: '/#faq?topic=faq', label: 'FAQ' },
 ];
 
 export function Footer() {
