@@ -6,13 +6,14 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Link from 'next/link';
+import { Button } from '../ui/button';
 
 const supportTopics = [
-  { id: 'faq', title: 'Frequently Asked Questions', content: 'faq' },
-  { id: 'shipping', title: 'Shipping & Delivery', content: 'shipping' },
-  { id: 'returns', title: 'Returns & Refunds', content: 'returns' },
-  { id: 'privacy', title: 'Privacy Policy', content: 'privacy' },
-  { id: 'terms', title: 'Terms of Service', content: 'terms' },
+  { id: 'faq', title: 'FAQ' },
+  { id: 'shipping', title: 'Shipping & Delivery' },
+  { id: 'returns', title: 'Returns & Refunds' },
+  { id: 'privacy', title: 'Privacy Policy' },
+  { id: 'terms', title: 'Terms of Service' },
 ];
 
 const faqItems = [
@@ -42,30 +43,70 @@ const faqItems = [
     },
 ];
 
-const policyContent: Record<string, {title: string, text: string, link: string, linkText: string}> = {
+const policyContent: Record<string, {title: string; content: React.ReactNode; link: string; linkText: string }> = {
     shipping: {
         title: "Swift & Secure Shipping",
-        text: "We deliver across India, ensuring your wellness package reaches you safely. Orders are processed within 1-2 business days, with estimated delivery in 3-7 days. For complete details on charges, tracking, and our process, please view our full policy.",
+        content: (
+            <div className="space-y-4">
+                <p>We deliver across India, ensuring your wellness package reaches you safely. Orders are processed within 1-2 business days, with estimated delivery in 3-7 days.</p>
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>Free shipping on prepaid orders above ₹800.</li>
+                    <li>Delivery charges vary by location for orders below ₹800.</li>
+                    <li>Order tracking details are sent via email upon dispatch.</li>
+                </ul>
+                <p>For complete details on charges, tracking, and our process, please view our full policy.</p>
+            </div>
+        ),
         link: "/shipping-and-delivery",
-        linkText: "View Shipping Policy"
+        linkText: "View Full Shipping Policy"
     },
     returns: {
         title: "Easy & Fair Returns",
-        text: "Your satisfaction is our priority. If you receive a damaged or incorrect product, contact us within 48 hours for a replacement or full refund. Please note that opened food products are non-returnable for hygiene reasons. Read our full policy for detailed instructions.",
+        content: (
+            <div className="space-y-4">
+                <p>Your satisfaction is our priority. If you receive a damaged or incorrect product, contact us within 48 hours for a replacement or full refund.</p>
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>Returns of unopened items are accepted within 7 days of delivery.</li>
+                    <li>Opened food products are non-returnable for hygiene reasons.</li>
+                    <li>Refunds are processed within 5-7 working days of approval.</li>
+                </ul>
+                <p>Read our full policy for detailed instructions.</p>
+            </div>
+        ),
         link: "/returns-and-refunds",
-        linkText: "View Returns Policy"
+        linkText: "View Full Returns Policy"
     },
     privacy: {
         title: "Your Privacy is Paramount",
-        text: "We are committed to protecting your personal information. We collect data only to process orders and improve your experience, and we never sell your data to third parties. To understand how we handle your information, please review our comprehensive Privacy Policy.",
+        content: (
+            <div className="space-y-4">
+                <p>We are committed to protecting your personal information. We collect data only to process orders and improve your experience.</p>
+                 <ul className="list-disc pl-5 space-y-2">
+                    <li>We never sell or rent your personal data to third parties.</li>
+                    <li>Your payment information is processed securely and is not stored by us.</li>
+                    <li>You have the right to access, correct, or delete your personal data at any time.</li>
+                </ul>
+                <p>To understand how we handle your information, please review our comprehensive Privacy Policy.</p>
+            </div>
+        ),
         link: "/privacy-policy",
-        linkText: "View Privacy Policy"
+        linkText: "View Full Privacy Policy"
     },
     terms: {
         title: "Our Terms of Service",
-        text: "By using our website and purchasing our products, you agree to our terms and conditions. These terms cover your rights and responsibilities, order placements, and use of our website content. We encourage you to read the full document to ensure a smooth and transparent experience.",
+        content: (
+            <div className="space-y-4">
+                <p>By using our website and purchasing our products, you agree to our terms and conditions. These terms cover your rights and responsibilities.</p>
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>You must be at least 18 years old to make a purchase.</li>
+                    <li>All content on this site is the property of SARIRA Wellness.</li>
+                    <li>We reserve the right to refuse or cancel any order.</li>
+                </ul>
+                <p>We encourage you to read the full document to ensure a smooth and transparent experience.</p>
+            </div>
+        ),
         link: "/terms-of-service",
-        linkText: "View Terms of Service"
+        linkText: "View Full Terms of Service"
     }
 }
 
@@ -104,7 +145,7 @@ export function Support() {
           </div>
           <div className="md:col-span-3">
              <Card className="shadow-lg">
-                <CardContent className="p-8">
+                <CardContent className="p-8 min-h-[450px]">
                      <AnimatePresence mode="wait">
                         <motion.div
                             key={activeTab}
@@ -113,7 +154,7 @@ export function Support() {
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.3 }}
                         >
-                            <h2 className="text-3xl font-bold text-primary mb-6">{activeTopic?.title}</h2>
+                            <h2 className="text-3xl font-bold text-primary mb-6">{activeTopic?.id === 'faq' ? "Frequently Asked Questions" : activeTopic?.title}</h2>
 
                             {activeTab === 'faq' ? (
                                 <Accordion type="single" collapsible className="w-full">
@@ -127,14 +168,14 @@ export function Support() {
                                 ))}
                                 </Accordion>
                             ) : (
-                                <div className="prose max-w-none prose-h3:text-primary prose-a:text-accent">
+                                <div className="prose max-w-none prose-h3:text-primary prose-a:text-accent prose-p:text-muted-foreground prose-li:text-muted-foreground">
                                     <h3>{policyContent[activeTab]?.title}</h3>
-                                    <p>{policyContent[activeTab]?.text}</p>
-                                    <Link href={policyContent[activeTab]?.link || '#'} className="no-underline">
-                                        <div className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded-md hover:bg-accent/90 transition-colors">
-                                           {policyContent[activeTab]?.linkText}
-                                        </div>
-                                    </Link>
+                                    <div>{policyContent[activeTab]?.content}</div>
+                                    <Button asChild variant="link" className="p-0 mt-4 text-accent hover:underline">
+                                        <Link href={policyContent[activeTab]?.link || '#'}>
+                                           {policyContent[activeTab]?.linkText} →
+                                        </Link>
+                                    </Button>
                                 </div>
                             )}
                         </motion.div>
