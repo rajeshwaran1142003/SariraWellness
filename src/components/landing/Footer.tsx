@@ -12,7 +12,6 @@ const exploreLinks = [
   { href: '/#journal', label: 'Journal' },
   { href: '/#contact-form', label: 'Contact' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/store-locator', label: 'Store Locator' },
 ];
 
 const supportLinks = [

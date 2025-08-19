@@ -9,12 +9,13 @@ import { WhatsappButton } from '@/components/landing/WhatsappButton';
 import { Gallery } from '@/components/landing/Gallery';
 import { HowToUse } from '@/components/landing/HowToUse';
 import { Recipes } from '@/components/landing/Recipes';
-import { StoreLocator } from '@/components/landing/StoreLocator';
 import { Faq } from '@/components/landing/Faq';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { About } from '@/components/landing/About';
+import { Contact } from '@/components/landing/Contact';
 
 export default function Home() {
+  console.log("Forcing a refresh to clear Turbopack error.");
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -28,7 +29,7 @@ export default function Home() {
         <Gallery />
         <Journal />
         <Community />
-        <StoreLocator />
+        <Contact />
         <Faq />
         <WellnessAI />
       </main>
