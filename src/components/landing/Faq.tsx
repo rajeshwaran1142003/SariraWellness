@@ -141,7 +141,7 @@ const GeneralFaqContent = () => (
 
 function FaqContent() {
     const searchParams = useSearchParams();
-    const topic = searchParams.get('topic');
+    const topic = searchParams.get('topic') || 'faq';
 
     let content;
     let title;
@@ -178,7 +178,7 @@ function FaqContent() {
             </div>
             {content}
             <div className="text-center mt-12 text-muted-foreground">
-                <p>Still have questions? Feel free to <Link href="/#contact" className="text-accent hover:underline">contact our wellness team</Link>.</p>
+                <p>Still have questions? Feel free to <Link href="/#contact-form" className="text-accent hover:underline">contact our wellness team</Link>.</p>
             </div>
         </>
     );

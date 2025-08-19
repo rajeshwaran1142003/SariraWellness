@@ -10,7 +10,7 @@ const exploreLinks = [
   { href: '/#about', label: 'About' },
   { href: '/product', label: 'Shop' },
   { href: '/#journal', label: 'Journal' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#contact-form', label: 'Contact' },
   { href: '/gallery', label: 'Gallery' },
 ];
 
