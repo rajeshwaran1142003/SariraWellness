@@ -13,9 +13,14 @@ const benefits = [
     { text: "No Preservatives", icon: <Sparkles className="w-8 h-8" /> }
 ];
 
-const headline = "Feed Your Roots. Fuel Your Rise.";
+const headlines = [
+    "Feed Your Roots. Fuel Your Rise.",
+    "Ancient Wisdom. Modern Wellness.",
+    "Nourish Your Body. Soothe Your Soul."
+];
 
 export function Hero() {
+  const [headlineIndex, setHeadlineIndex] = useState(0);
   const [typedHeadline, setTypedHeadline] = useState('');
   const [isMounted, setIsMounted] = useState(false);
 
@@ -25,35 +30,41 @@ export function Hero() {
 
   useEffect(() => {
     if (isMounted) {
-      let currentIndex = 0;
+      let charIndex = 0;
       let isDeleting = false;
+      let timeoutId: NodeJS.Timeout;
 
       const type = () => {
+        const currentHeadline = headlines[headlineIndex];
+        
         if (isDeleting) {
-          if (currentIndex > 0) {
-            setTypedHeadline(headline.substring(0, currentIndex - 1));
-            currentIndex--;
+          if (charIndex > 0) {
+            setTypedHeadline(currentHeadline.substring(0, charIndex - 1));
+            charIndex--;
+            timeoutId = setTimeout(type, 60);
           } else {
             isDeleting = false;
+            setHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length);
           }
         } else {
-          if (currentIndex < headline.length) {
-            setTypedHeadline(headline.substring(0, currentIndex + 1));
-            currentIndex++;
+          if (charIndex < currentHeadline.length) {
+            setTypedHeadline(currentHeadline.substring(0, charIndex + 1));
+            charIndex++;
+            timeoutId = setTimeout(type, 120);
           } else {
-            // Pause at the end before starting to delete
-            setTimeout(() => {
+             timeoutId = setTimeout(() => {
               isDeleting = true;
+              type();
             }, 2000); 
           }
         }
       };
 
-      const interval = setInterval(type, isDeleting ? 60 : 120);
+      type();
 
-      return () => clearInterval(interval);
+      return () => clearTimeout(timeoutId);
     }
-  }, [isMounted]);
+  }, [isMounted, headlineIndex]);
 
 
   return (
