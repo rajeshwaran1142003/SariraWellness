@@ -10,7 +10,6 @@ import { WhatsappButton } from '@/components/landing/WhatsappButton';
 import { Gallery } from '@/components/landing/Gallery';
 import { HowToUse } from '@/components/landing/HowToUse';
 import { Recipes } from '@/components/landing/Recipes';
-import { Faq } from '@/components/landing/Faq';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { About } from '@/components/landing/About';
 import { Contact } from '@/components/landing/Contact';
@@ -30,7 +29,6 @@ export default function Home() {
         <Journal />
         <Community />
         <Contact />
-        <Faq />
         <WellnessAI />
       </main>
       <Footer />

@@ -12,7 +12,6 @@ const navLinks = [
   { href: '/#about', label: 'About' },
   { href: '/#recipes', label: 'Recipes' },
   { href: '/#gallery', label: 'Gallery' },
-  { href: '/#faq', label: 'FAQ' },
   { href: '/#wellness-ai', label: 'Wellness AI'}
 ];
 
