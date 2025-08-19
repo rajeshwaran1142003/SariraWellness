@@ -15,11 +15,11 @@ const exploreLinks = [
 ];
 
 const supportLinks = [
-    { href: '/shipping-and-delivery', label: 'Shipping & Delivery' },
-    { href: '/returns-and-refunds', label: 'Returns & Refunds' },
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms-of-service', label: 'Terms of Service' },
-    { href: '/faq', label: 'FAQ' },
+    { href: '/#faq-shipping', label: 'Shipping & Delivery' },
+    { href: '/#faq-returns', label: 'Returns & Refunds' },
+    { href: '/#faq-privacy', label: 'Privacy Policy' },
+    { href: '/#faq-terms', label: 'Terms of Service' },
+    { href: '/#faq', label: 'FAQ' },
 ];
 
 export function Footer() {
