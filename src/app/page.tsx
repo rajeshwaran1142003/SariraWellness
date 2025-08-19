@@ -12,6 +12,8 @@ import { Recipes } from '@/components/landing/Recipes';
 import { StoreLocator } from '@/components/landing/StoreLocator';
 import { Faq } from '@/components/landing/Faq';
 import { Testimonials } from '@/components/landing/Testimonials';
+import { Contact } from '@/components/landing/Contact';
+import { About } from '@/components/landing/About';
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <About />
         <Product />
         <HowToUse />
         <Recipes />
@@ -29,6 +32,7 @@ export default function Home() {
         <StoreLocator />
         <Faq />
         <WellnessAI />
+        <Contact />
       </main>
       <Footer />
       <WhatsappButton />
