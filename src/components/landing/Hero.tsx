@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
-import Image from 'next/image';
 
 const benefits = [
     { text: "Fertility Boost", icon: <HeartPulse className="w-8 h-8" /> },
@@ -13,9 +12,14 @@ const benefits = [
     { text: "No Preservatives", icon: <Sparkles className="w-8 h-8" /> }
 ];
 
+const headlines = [
+    "Feed Your Roots. Fuel Your Rise.",
+    "Tradition You Can Sip.",
+    "Wellness, One Spoon at a Time."
+];
+
 export function Hero() {
-  const [typedText, setTypedText] = useState('');
-  const textToType = "Feed Your Roots. Fuel Your Rise.";
+  const [headlineIndex, setHeadlineIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -24,24 +28,22 @@ export function Hero() {
 
   useEffect(() => {
     if (isMounted) {
-      if (typedText.length < textToType.length) {
-        const typingTimeout = setTimeout(() => {
-          setTypedText(textToType.slice(0, typedText.length + 1));
-        }, 50);
-        return () => clearTimeout(typingTimeout);
-      }
+      const interval = setInterval(() => {
+        setHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length);
+      }, 3000); // Change headline every 3 seconds
+
+      return () => clearInterval(interval);
     }
-  }, [isMounted, typedText, textToType]);
+  }, [isMounted]);
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
         <div className="w-full text-center">
-            <p className="text-accent font-body mb-2 text-2xl">Welcome to SARIRA Wellness</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary mb-4">
-                {typedText}
-                <span className="opacity-50 animate-ping">|</span>
+            <p className="text-accent font-headline mb-2 text-2xl">Welcome to SARIRA Wellness</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-body text-primary mb-4 h-24 md:h-28 lg:h-32">
+                {isMounted ? headlines[headlineIndex] : headlines[0]}
             </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
