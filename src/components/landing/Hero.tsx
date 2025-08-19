@@ -41,8 +41,8 @@ export function Hero() {
        <div className="absolute inset-0 bg-[url('https://storage.googleapis.com/stedi-dev-images/sarira-bg-texture.png')] bg-repeat bg-center opacity-5"></div>
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center relative z-10 gap-12">
         <div className="w-full text-center">
-            <p className="text-accent font-body mb-2 text-2xl">Welcome to SARIRA Wellness</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary mb-4 h-24 md:h-28 lg:h-32">
+            <p className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary mb-4">Welcome to SARIRA Wellness</p>
+            <h1 className="text-accent font-body mb-2 text-2xl h-8">
                 {isMounted ? headlines[headlineIndex] : headlines[0]}
             </h1>
           
