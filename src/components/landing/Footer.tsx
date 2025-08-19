@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { InstagramIcon } from '@/components/icons/InstagramIcon';
 import { YoutubeIcon } from '@/components/icons/YoutubeIcon';
@@ -15,11 +16,11 @@ const exploreLinks = [
 ];
 
 const supportLinks = [
-    { href: '/#faq?topic=shipping', label: 'Shipping & Delivery' },
-    { href: '/#faq?topic=returns', label: 'Returns & Refunds' },
-    { href: '/#faq?topic=privacy', label: 'Privacy Policy' },
-    { href: '/#faq?topic=terms', label: 'Terms of Service' },
-    { href: '/#faq?topic=faq', label: 'FAQ' },
+    { href: '/#faq', label: 'Shipping & Delivery' },
+    { href: '/#faq', label: 'Returns & Refunds' },
+    { href: '/#faq', label: 'Privacy Policy' },
+    { href: '/#faq', label: 'Terms of Service' },
+    { href: '/#faq', label: 'FAQ' },
 ];
 
 export function Footer() {
