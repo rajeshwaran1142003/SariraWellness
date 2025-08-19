@@ -50,7 +50,7 @@ const supportTopics = [
   },
   { 
     id: 'faq', 
-    title: 'General FAQ', 
+    title: 'Frequently Asked Questions (FAQs)', 
     icon: <HelpCircle className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />,
     questions: [
         { q: "What is SARIRA Fig Malt made of?", a: "SARIRA Fig Malt is made from 100% organic figs and premium nuts. It contains no preservatives, refined sugar, or artificial flavors." },
@@ -139,10 +139,10 @@ export function Support() {
                   >
                     <Card
                       onClick={() => handleSelectTopic(topic.id)}
-                      className="group cursor-pointer p-6 text-center flex flex-col items-center gap-4 bg-background/50 hover:shadow-lg hover:shadow-accent/20 transition-shadow duration-300 h-full"
+                      className="group cursor-pointer p-6 text-center flex flex-col items-center justify-center gap-4 bg-background/50 hover:shadow-lg hover:shadow-accent/20 transition-shadow duration-300 h-full min-h-[160px]"
                     >
                       {topic.icon}
-                      <h3 className="text-lg font-semibold text-primary transition-colors">{topic.title}</h3>
+                      <h3 className="text-lg font-semibold text-primary transition-colors text-center">{topic.title}</h3>
                     </Card>
                   </motion.div>
                 ))}
