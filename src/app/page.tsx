@@ -12,7 +12,6 @@ import { Recipes } from '@/components/landing/Recipes';
 import { StoreLocator } from '@/components/landing/StoreLocator';
 import { Faq } from '@/components/landing/Faq';
 import { Testimonials } from '@/components/landing/Testimonials';
-import { Contact } from '@/components/landing/Contact';
 import { About } from '@/components/landing/About';
 
 export default function Home() {
@@ -32,7 +31,6 @@ export default function Home() {
         <StoreLocator />
         <Faq />
         <WellnessAI />
-        <Contact />
       </main>
       <Footer />
       <WhatsappButton />
