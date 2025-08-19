@@ -16,6 +16,7 @@ const exploreLinks = [
 ];
 
 const supportLinks = [
+    { href: '/#support', label: 'FAQs' },
     { href: '/shipping-and-delivery', label: 'Shipping & Delivery' },
     { href: '/returns-and-refunds', label: 'Returns & Refunds' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
