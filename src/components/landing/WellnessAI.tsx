@@ -6,9 +6,9 @@ import { useFormStatus } from 'react-dom';
 import { getWellnessTip, State } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Sparkles, BrainCircuit } from 'lucide-react';
+import { Sparkles, BrainCircuit, Bot } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 function SubmitButton() {
@@ -65,26 +65,26 @@ export function WellnessAI() {
                 </p>
             </div>
             
-            <Card className="shadow-2xl border-primary/10 bg-white/50 backdrop-blur-sm p-2">
-                <div className="grid lg:grid-cols-2 gap-0">
-                    <div className="p-6">
-                        <h3 className="text-xl font-bold text-primary mb-4">Wellness Tip Generator</h3>
-                        <p className="text-muted-foreground mb-6">Enter a topic like "digestion," "better sleep," or "energy boost" to receive a personalized tip.</p>
+            <Card className="shadow-2xl border-primary/10 bg-white/50 backdrop-blur-sm max-w-3xl mx-auto">
+                <CardContent className="p-8">
+                    <div className="max-w-xl mx-auto">
+                        <h3 className="text-xl font-bold text-primary mb-2 text-center">Wellness Tip Generator</h3>
+                        <p className="text-muted-foreground mb-6 text-center">Enter a topic like "digestion" or "better sleep" to receive a personalized tip.</p>
                         
-                        <form ref={formRef} action={dispatch} className="space-y-4">
+                        <form ref={formRef} action={dispatch} className="space-y-4 mb-6">
                             <div className="space-y-2">
-                                <label htmlFor="topic" className="font-semibold text-primary">
+                                <label htmlFor="topic" className="font-semibold text-primary sr-only">
                                     Your Topic
                                 </label>
-                                <Input id="topic" name="topic" placeholder="e.g., Healthy Digestion" className="flex-grow bg-background" aria-label="Wellness topic" />
-                                {state.errors?.topic && <p className="text-sm font-medium text-destructive">{state.errors.topic}</p>}
+                                <Input id="topic" name="topic" placeholder="e.g., Healthy Digestion" className="flex-grow bg-background text-center" aria-label="Wellness topic" />
+                                {state.errors?.topic && <p className="text-sm font-medium text-destructive text-center">{state.errors.topic}</p>}
                             </div>
                             <SubmitButton />
                         </form>
 
-                        <div className="mt-6">
+                        <div className="text-center">
                             <p className="text-sm text-muted-foreground mb-2">Or try one of these:</p>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-2 justify-center">
                                 {suggestionTopics.map(topic => (
                                 <Button 
                                     key={topic} 
@@ -98,27 +98,22 @@ export function WellnessAI() {
                                 ))}
                             </div>
                         </div>
-                    </div>
-                    
-                    <div className="bg-primary/95 text-primary-foreground rounded-lg m-2 lg:m-0 lg:rounded-l-none">
-                         <div className={cn("p-6 flex flex-col items-center justify-center h-full transition-opacity duration-500", state.tip ? 'opacity-100' : 'opacity-50')}>
-                            {state.tip ? (
-                                <div className="w-full animate-in fade-in-50">
-                                    <h4 className="font-bold text-lg text-accent mb-2 flex items-center">
-                                        <Sparkles className="mr-2 h-5 w-5"/>
-                                        Your AI-Generated Wellness Tip
-                                    </h4>
-                                    <p className="whitespace-pre-wrap text-primary-foreground/90">{state.tip}</p>
+
+                        {state.tip && (
+                             <div className="mt-8 pt-6 border-t border-primary/10">
+                                <div className={cn("p-6 flex flex-col items-center justify-center h-full transition-opacity duration-500 bg-primary/5 rounded-lg", state.tip ? 'opacity-100' : 'opacity-0')}>
+                                    <div className="w-full animate-in fade-in-50 text-center">
+                                        <h4 className="font-bold text-lg text-accent mb-2 flex items-center justify-center">
+                                            <Sparkles className="mr-2 h-5 w-5"/>
+                                            Your AI-Generated Wellness Tip
+                                        </h4>
+                                        <p className="whitespace-pre-wrap text-primary/90">{state.tip}</p>
+                                    </div>
                                 </div>
-                            ) : (
-                                <div className="text-center">
-                                    <Sparkles className="mx-auto h-12 w-12 text-accent/50 mb-4"/>
-                                    <p className="text-primary-foreground/70">Your personalized tip will appear here...</p>
-                                </div>
-                            )}
-                        </div>
+                             </div>
+                        )}
                     </div>
-                </div>
+                </CardContent>
             </Card>
         </div>
     </section>
