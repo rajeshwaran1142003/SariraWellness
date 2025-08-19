@@ -15,7 +15,6 @@ import { About } from '@/components/landing/About';
 import { Contact } from '@/components/landing/Contact';
 
 export default function Home() {
-  console.log("Forcing a refresh to clear Turbopack error.");
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
