@@ -26,18 +26,35 @@ export function Hero() {
   useEffect(() => {
     if (isMounted) {
       let currentIndex = 0;
-      const interval = setInterval(() => {
-        if (currentIndex <= headline.length) {
-          setTypedHeadline(headline.substring(0, currentIndex));
-          currentIndex++;
+      let isDeleting = false;
+
+      const type = () => {
+        if (isDeleting) {
+          if (currentIndex > 0) {
+            setTypedHeadline(headline.substring(0, currentIndex - 1));
+            currentIndex--;
+          } else {
+            isDeleting = false;
+          }
         } else {
-          clearInterval(interval);
+          if (currentIndex < headline.length) {
+            setTypedHeadline(headline.substring(0, currentIndex + 1));
+            currentIndex++;
+          } else {
+            // Pause at the end before starting to delete
+            setTimeout(() => {
+              isDeleting = true;
+            }, 2000); 
+          }
         }
-      }, 100); 
+      };
+
+      const interval = setInterval(type, isDeleting ? 60 : 120);
 
       return () => clearInterval(interval);
     }
   }, [isMounted]);
+
 
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-gradient-to-b from-background to-secondary">
