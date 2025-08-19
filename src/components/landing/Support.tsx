@@ -60,6 +60,8 @@ const supportTopics = [
   },
 ];
 
+const visibleTopics = supportTopics.filter(topic => topic.id !== 'faq');
+
 export function Support() {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
 
@@ -130,8 +132,8 @@ export function Support() {
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Support Center</h2>
                 <p className="text-xl text-muted-foreground">Find answers to your questions</p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                {supportTopics.map(topic => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {visibleTopics.map(topic => (
                   <motion.div
                     key={topic.id}
                     whileHover={{ scale: 1.05, y: -5 }}
