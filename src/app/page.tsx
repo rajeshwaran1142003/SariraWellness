@@ -13,7 +13,7 @@ import { Recipes } from '@/components/landing/Recipes';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { About } from '@/components/landing/About';
 import { Contact } from '@/components/landing/Contact';
-import { Support } from '@/components/landing/Support';
+import { Faq } from '@/components/landing/Faq';
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
         <Journal />
         <Community />
         <Contact />
-        <Support />
+        <Faq />
         <WellnessAI />
       </main>
       <Footer />
