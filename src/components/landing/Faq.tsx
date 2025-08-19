@@ -36,7 +36,7 @@ export function Faq() {
                     Shipping & Delivery
                 </AccordionTrigger>
                 <AccordionContent className="px-6 text-base text-muted-foreground prose">
-                    <p>We deliver across India. Orders are typically processed within 1 business day and delivered within 6-10 working days. You will receive tracking information via email once your order is dispatched. For more details, please see our <Link href="/shipping-and-delivery" className="text-accent hover:underline">full policy</Link>.</p>
+                    <p>We deliver across India, with free shipping on prepaid orders above ₹800. Orders are typically processed within 1 business day and delivered within 6-10 working days. You will receive tracking information via email once your order is dispatched. For more details, please see our <Link href="/shipping-and-delivery" className="text-accent hover:underline">full policy</Link>.</p>
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="bg-background border rounded-lg shadow-sm">
