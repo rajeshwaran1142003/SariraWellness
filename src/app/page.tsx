@@ -1,6 +1,5 @@
 import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
-import { About } from '@/components/landing/About';
 import { Product } from '@/components/landing/Product';
 import { Community } from '@/components/landing/Community';
 import { Journal } from '@/components/landing/Journal';
@@ -20,7 +19,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <About />
         <Product />
         <HowToUse />
         <Recipes />
