@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, HeartPulse, Baby, Sparkles } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const benefits = [
     { text: "Fertility Boost", icon: <HeartPulse className="w-8 h-8" /> },
@@ -12,14 +13,10 @@ const benefits = [
     { text: "No Preservatives", icon: <Sparkles className="w-8 h-8" /> }
 ];
 
-const headlines = [
-    "Feed Your Roots. Fuel Your Rise.",
-    "Tradition You Can Sip.",
-    "Wellness, One Spoon at a Time."
-];
+const headline = "Feed Your Roots. Fuel Your Rise.";
 
 export function Hero() {
-  const [headlineIndex, setHeadlineIndex] = useState(0);
+  const [typedHeadline, setTypedHeadline] = useState('');
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -28,9 +25,15 @@ export function Hero() {
 
   useEffect(() => {
     if (isMounted) {
+      let currentIndex = 0;
       const interval = setInterval(() => {
-        setHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length);
-      }, 3000); // Change headline every 3 seconds
+        if (currentIndex <= headline.length) {
+          setTypedHeadline(headline.substring(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100); 
 
       return () => clearInterval(interval);
     }
@@ -43,7 +46,8 @@ export function Hero() {
         <div className="w-full text-center">
             <p className="text-4xl md:text-5xl lg:text-6xl font-headline text-primary mb-4">Welcome to SARIRA Wellness</p>
             <h1 className="text-accent font-body mb-2 text-2xl h-8">
-                {isMounted ? headlines[headlineIndex] : headlines[0]}
+              <span>{typedHeadline}</span>
+              <span className="animate-pulse">|</span>
             </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
