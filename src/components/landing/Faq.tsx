@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -64,9 +63,9 @@ export function Faq() {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`} 
-                className="bg-white rounded-lg shadow-sm border border-border data-[state=open]:border-accent transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="bg-white rounded-lg shadow-sm border border-border data-[state=open]:border-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-primary hover:no-underline data-[state=open]:text-accent">
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-primary hover:no-underline data-[state=open]:text-primary">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 text-base text-muted-foreground">
