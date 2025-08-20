@@ -1,101 +1,191 @@
 "use client";
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, Truck, PackageOpen, Shield, FileText, HelpCircle } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
 
 const supportTopics = [
   {
     id: 'shipping',
     title: 'Shipping & Delivery',
+    icon: <Truck className="w-10 h-10" />,
     content: (
-        <div className="prose">
-            <p>We deliver across India. Orders are typically processed within 1-2 business days and delivered within 6-10 working days. You'll receive a tracking link once your order is dispatched.</p>
-            <Link href="/shipping-and-delivery" className="text-accent font-semibold hover:underline">Learn More →</Link>
-        </div>
+        <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
+            <AccordionItem value="item-1">
+            <AccordionTrigger className="text-xl">Shipping Coverage & Charges</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground prose">
+                <ul>
+                <li>We deliver across India (local areas in Tamil Nadu included), excluding certain remote regions.</li>
+                <li>Free shipping on prepaid orders above ₹800.</li>
+                <li>For orders below ₹800, delivery charges vary by location.</li>
+                </ul>
+            </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+            <AccordionTrigger className="text-xl">Order Processing Time</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground prose">
+                <ul>
+                    <li>Orders placed before 5 PM are processed within 1 business day.</li>
+                    <li>Weekends & public holidays are not processing days.</li>
+                </ul>
+            </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+            <AccordionTrigger className="text-xl">Delivery Timeline</AccordionTrigger>
+            <AccordionContent className="text-base text-muted-foreground prose">
+                <ul>
+                    <li>Estimated delivery: 6–10 working days across India, depending on your location.</li>
+                    <li>Courier tracking via email or SMS provided at dispatch.</li>
+                </ul>
+            </AccordionContent>
+            </AccordionItem>
+        </Accordion>
     )
   },
   {
     id: 'returns',
     title: 'Returns & Refunds',
+    icon: <PackageOpen className="w-10 h-10" />,
     content: (
-         <div className="prose">
-            <p>We accept returns of unopened items in their original packaging within 7 days of delivery. If you receive a damaged or incorrect product, please contact us within 48 hours for a replacement or full refund.</p>
-            <Link href="/returns-and-refunds" className="text-accent font-semibold hover:underline">Learn More →</Link>
-        </div>
+        <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
+            <AccordionItem value="item-1">
+                <AccordionTrigger className="text-xl">Return Policy</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                We accept returns of unopened items in their original packaging within 7 days of delivery. To initiate a return, please contact us at sariranutrition@gmail.com.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+                <AccordionTrigger className="text-xl">Damaged or Incorrect Products</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                If you receive a damaged or incorrect product, please send a photo of the item to our support team within 48 hours of delivery. We will arrange for a replacement or a full refund at no extra cost to you.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+                <AccordionTrigger className="text-xl">Non-Returnable Items</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                For hygiene and safety reasons, we cannot accept returns of opened or used food products.
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
     )
   },
   {
     id: 'privacy',
     title: 'Privacy Policy',
+    icon: <Shield className="w-10 h-10" />,
     content: (
-         <div className="prose">
-            <p>Your privacy is important to us. We collect personal information for order processing but do not store payment details. We never sell your data to third parties. Your trust is our priority.</p>
-            <Link href="/privacy-policy" className="text-accent font-semibold hover:underline">Learn More →</Link>
+         <div className="prose max-w-none text-muted-foreground">
+            <p>Your privacy is important to us. We collect personal information for order processing and communication, but we never store your payment card details. We use industry-standard security measures to protect your data and will never sell it to third parties. Your trust is our priority, and we are committed to safeguarding your information.</p>
         </div>
     )
   },
   {
     id: 'terms',
     title: 'Terms of Service',
+    icon: <FileText className="w-10 h-10" />,
     content: (
-         <div className="prose">
-            <p>By using our website, you agree to our terms of service. This includes using the site lawfully and for its intended purpose. All content is the property of SARIRA Wellness.</p>
-            <Link href="/terms-of-service" className="text-accent font-semibold hover:underline">Learn More →</Link>
+         <div className="prose max-w-none text-muted-foreground">
+            <p>By using our website and purchasing our products, you agree to our terms of service. This includes using the site lawfully and for its intended purpose. All content on this website, including text, images, and logos, is the property of SARIRA Wellness and is protected by copyright law. We reserve the right to refuse service to anyone for any reason at any time.</p>
         </div>
+    )
+  },
+  {
+    id: 'faq',
+    title: 'Frequently Asked Questions',
+    icon: <HelpCircle className="w-10 h-10" />,
+    content: (
+        <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
+            <AccordionItem value="item-1">
+                <AccordionTrigger className="text-xl">What is SARIRA Fig Malt made of?</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                    SARIRA Fig Malt is made from 100% organic figs and premium nuts. No preservatives, no refined sugar, and no artificial flavors — just clean, plant-based nutrition.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+                <AccordionTrigger className="text-xl">Is SARIRA safe for children and elders?</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                    Yes! SARIRA is gentle, nutritious, and family-friendly, suitable for children above 1 year and elders alike. It supports digestion, immunity, and energy in all age groups.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+                <AccordionTrigger className="text-xl">Can I use SARIRA as a sugar substitute?</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                    Absolutely. SARIRA Fig Malt has a naturally sweet taste from figs and can be used in place of refined sugar in milk, tea, porridge, baking, or toast toppings.
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
     )
   },
 ];
 
+const cardVariants = {
+  initial: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+};
+
+const expandedVariants = {
+  hidden: { opacity: 0, height: 0 },
+  visible: { opacity: 1, height: 'auto', transition: { duration: 0.4, ease: 'easeInOut' } },
+  exit: { opacity: 0, height: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
+};
+
 export function Support() {
-  const [activeTab, setActiveTab] = useState(supportTopics[0].id);
-  const activeTopic = supportTopics.find(topic => topic.id === activeTab);
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+  const topicData = supportTopics.find(t => t.id === selectedTopic);
 
   return (
-    <section id="support" className="bg-[#F9F9F9]">
-      <div className="container mx-auto px-4">
-        <Card className="w-full max-w-5xl mx-auto shadow-lg rounded-xl overflow-hidden">
-          <CardHeader className="bg-white p-6 border-b">
-            <CardTitle className="text-2xl md:text-3xl font-bold text-primary text-center">Support Center</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6 md:p-8">
-            <div className="flex flex-col md:flex-row gap-8">
-              {/* Tabs Navigation */}
-              <div className="flex md:flex-col overflow-x-auto md:overflow-x-visible -mx-2 px-2 md:border-r md:pr-8">
-                {supportTopics.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`${
-                      activeTab === tab.id ? 'text-accent' : 'text-muted-foreground hover:text-primary'
-                    } relative whitespace-nowrap text-left text-lg font-medium p-3 transition-colors duration-300`}
-                    style={{
-                      WebkitTapHighlightColor: 'transparent',
-                    }}
-                  >
-                    {activeTab === tab.id && (
-                      <motion.span
-                        layoutId="bubble"
-                        className="absolute inset-x-0 bottom-0 md:bottom-auto md:top-0 md:-left-1 md:h-full md:w-1 bg-accent"
-                        transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    {tab.title}
-                  </button>
+    <section id="support" className="bg-[#F9F5F0]">
+      <div className="container mx-auto px-4 py-16 md:py-20 lg:py-24">
+        <AnimatePresence mode="wait">
+          {selectedTopic ? (
+            <motion.div
+              key="expanded-view"
+              variants={expandedVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="max-w-4xl mx-auto"
+            >
+              <Button
+                variant="ghost"
+                onClick={() => setSelectedTopic(null)}
+                className="mb-6 text-primary hover:text-accent"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to All Topics
+              </Button>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">{topicData?.title}</h2>
+              <div className="w-24 h-1 bg-accent mb-8"></div>
+              <div>{topicData?.content}</div>
+            </motion.div>
+          ) : (
+            <motion.div key="grid-view">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Support Center</h2>
+                <p className="text-xl text-muted-foreground">How can we help you?</p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+                {supportTopics.map((topic) => (
+                  <motion.div key={topic.id} variants={cardVariants} exit="exit">
+                    <Card
+                      className="group cursor-pointer p-6 text-center flex flex-col items-center justify-center gap-4 bg-background/50 hover:shadow-lg hover:shadow-accent/20 transition-shadow duration-300 h-full min-h-[160px] transform hover:scale-102"
+                      onClick={() => setSelectedTopic(topic.id)}
+                    >
+                      <div className="text-primary transition-colors duration-300 group-hover:text-accent">{topic.icon}</div>
+                      <CardTitle className="text-lg font-semibold text-primary transition-colors duration-300 group-hover:text-accent">
+                        {topic.title}
+                      </CardTitle>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
-
-              {/* Tab Content */}
-              <div className="flex-1 min-h-[150px]">
-                <h3 className="text-2xl font-bold text-primary mb-4">{activeTopic?.title}</h3>
-                <div className="text-muted-foreground leading-relaxed">
-                  {activeTopic?.content}
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
