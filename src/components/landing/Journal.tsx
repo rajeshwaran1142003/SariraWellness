@@ -13,14 +13,14 @@ const posts = [
   {
     title: "The Unsung Hero of Tamil Kitchens: The Humble Fig",
     description: "Long before superfoods became a buzzword, the fig (അத்திப்பழം) was a cornerstone of wellness in Tamil households. We explore its journey from ancient scriptures to your kitchen.",
-    image: "https://images.unsplash.com/photo-1605315357200-a4668c8e7a3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlncyUyMG9uJTIwYSUyMHBsYXRlfGVufDB8fHx8MTc1NTY4NDEzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1616264630975-c98543fbe751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmaWdzJTIwb24lMjBhJTIwcGxhdGV8ZW58MHx8fHwxNzU1Njg0MTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "figs on a plate",
     link: "/tamil-culture"
   },
   {
     title: "Postpartum Care, the Paatti Way: A Guide for New Mothers",
     description: "A new mother's body is a temple deserving of gentle, powerful nourishment. Learn how traditional Tamil postpartum care focuses on healing from within, with ingredients that restore strength and balance.",
-    image: "https://images.unsplash.com/photo-1548289227-b7d966b70003?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb3RoZXIlMjBiYWJ5JTIwZm9vZHxlbnwwfHx8fDE3NTU2ODQxMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "https://images.unsplash.com/photo-1557939663-0619f304af9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb3RoZXIlMjBiYWJ5JTIwZm9vZHxlbnwwfHx8fDE3NTU2ODQxMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "mother baby food",
     link: "/tamil-culture"
   },
@@ -34,21 +34,21 @@ const posts = [
   {
     title: "Beyond Sugar: The Ancient Art of Sweetening with Nature",
     description: "Discover how traditional Tamil diets used natural sweeteners like fig, honey, and jaggery to create delicious and healthy treats, long before refined sugar became common.",
-    image: "https://placehold.co/800x600.png",
+    image: "https://images.unsplash.com/photo-1655169947079-5b2a38815147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuYXR1cmFsJTIwc3dlZXRlbmVycyUyMGhvbmV5fGVufDB8fHx8MTc1NTY4NDM5OHww&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "natural sweeteners honey",
     link: "/tamil-culture"
   },
   {
     title: "Fueling the Future: Timeless Nutrition for Growing Kids",
     description: "Learn about the traditional foods and practices that have nourished generations of healthy, active children in Tamil culture, focusing on immunity and energy.",
-    image: "https://placehold.co/800x600.png",
+    image: "https://images.unsplash.com/photo-1752652012704-565483c5d1fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwY2hpbGQlMjBlYXRpbmd8ZW58MHx8fHwxNzU1Njg0Mzk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "healthy child eating",
     link: "/tamil-culture"
   },
   {
     title: "Food as Medicine: The Siddha Philosophy in Your Kitchen",
     description: "Explore the ancient Siddha wisdom that views food not just as sustenance, but as a powerful tool for maintaining balance and preventing illness.",
-    image: "https://placehold.co/800x600.png",
+    image: "https://images.unsplash.com/photo-1730596628352-08a13f00f5cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoZXJicyUyMHNwaWNlc3xlbnwwfHx8fDE3NTU2ODQzOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "herbs spices",
     link: "/tamil-culture"
   }
