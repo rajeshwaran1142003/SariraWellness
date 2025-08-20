@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -10,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Phone, Mail, Clock, MapPin, MessageSquare, Send, User } from "lucide-react";
 import Link from "next/link";
 import { WhatsappIcon } from "../icons/WhatsappIcon";
+import { motion } from "framer-motion";
 
 const contactInfo = [
     {
@@ -50,7 +52,14 @@ export function Contact() {
   };
 
   return (
-    <section id="contact-form" className="bg-secondary/50 py-16 md:py-24">
+    <motion.section 
+      id="contact-form" 
+      className="bg-secondary/50 py-16 md:py-24"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
@@ -60,11 +69,11 @@ export function Contact() {
         <div className="grid lg:grid-cols-5 gap-10">
             {/* Left Column */}
             <div className="lg:col-span-2">
-                <Card className="p-8 h-full">
+                <Card className="p-8 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <h3 className="text-2xl font-bold text-primary mb-6">Contact Information</h3>
-                    <div className="space-y-6">
+                    <div className="space-y-2">
                         {contactInfo.map((item, index) => (
-                            <div key={index} className="flex items-start gap-4">
+                            <div key={index} className="flex items-start gap-4 p-4 rounded-lg transition-colors duration-300 hover:bg-primary/5">
                                 <div className="bg-accent/10 p-3 rounded-full mt-1">
                                     {item.icon}
                                 </div>
@@ -81,12 +90,12 @@ export function Contact() {
                         ))}
                     </div>
                     <div className="mt-8 space-y-4">
-                        <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white transition-transform duration-300 hover:scale-105">
                             <Link href="https://wa.me/917010422748" target="_blank">
                                 <WhatsappIcon className="mr-2"/> Chat on WhatsApp
                             </Link>
                         </Button>
-                         <Button asChild size="lg" variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-accent-foreground">
+                         <Button asChild size="lg" variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 hover:scale-105">
                             <Link href="mailto:support@sarirawellness.com">
                                 <Mail className="mr-2"/> Send Email
                             </Link>
@@ -97,7 +106,7 @@ export function Contact() {
 
             {/* Right Column */}
             <div className="lg:col-span-3">
-                 <Card className="bg-primary/95 text-primary-foreground p-8 shadow-2xl">
+                 <Card className="bg-primary/95 text-primary-foreground p-8 shadow-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-1">
                     <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
                     {!submitted ? (
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -138,24 +147,44 @@ export function Contact() {
                                 <Textarea id="message" placeholder="Tell us how we can help you..." required rows={5} className="bg-background/10 border-white/20 text-white placeholder:text-white/50 rounded-lg"/>
                             </div>
                             <div className="text-right">
-                                <Button type="submit" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-xl px-8">
+                                <Button type="submit" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-xl px-8 transition-transform duration-300 hover:scale-105">
                                     <Send className="mr-2 h-4 w-4" /> Send Message
                                 </Button>
                             </div>
                         </form>
                     ) : (
                         <div className="flex flex-col items-center justify-center h-[400px] text-center">
-                            <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <Send className="w-8 h-8" />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
-                            <p className="text-white/80">Thank you for reaching out to SARIRA! We will get back to you soon.</p>
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            >
+                                <div className="w-16 h-16 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <Send className="w-8 h-8" />
+                                </div>
+                            </motion.div>
+                            <motion.h3 
+                                className="text-2xl font-bold text-white mb-2"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                Thank You!
+                            </motion.h3>
+                            <motion.p 
+                                className="text-white/80"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                Thank you for reaching out to SARIRA! We will get back to you soon.
+                            </motion.p>
                         </div>
                     )}
                 </Card>
             </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
