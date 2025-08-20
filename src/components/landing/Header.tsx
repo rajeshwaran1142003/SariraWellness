@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -9,8 +10,8 @@ import { SariraLogo } from '@/components/icons/SariraLogo';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#about', label: 'About' },
-  { href: '/#recipes', label: 'Recipes' },
+  { href: '/about-us', label: 'About' },
+  { href: '/about-us#recipes', label: 'Recipes' },
   { href: '/#wellness-ai', label: 'Wellness AI'}
 ];
 
