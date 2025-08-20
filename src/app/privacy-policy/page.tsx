@@ -15,7 +15,7 @@ const policySections = [
     title: "1. Information We Collect",
     icon: <Info className="w-5 h-5" />,
     content: (
-      <div className="prose-sm md:prose-base max-w-none">
+      <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
         <p>When you use our website or place an order, we may collect the following types of information:</p>
         <ul>
           <li><strong>Personal Information:</strong> Name, phone number, email address, shipping address, billing address.</li>
@@ -32,7 +32,7 @@ const policySections = [
     title: "2. How We Use Your Information",
     icon: <Shield className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>We use your data to:</p>
             <ul>
                 <li>Process and fulfill your orders.</li>
@@ -50,7 +50,7 @@ const policySections = [
     title: "3. Sharing Your Information",
     icon: <Share2 className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>We do not sell, rent, or trade your personal information. We only share it with:</p>
             <ul>
                 <li>Logistics and courier partners (to deliver your order).</li>
@@ -66,7 +66,7 @@ const policySections = [
     title: "4. Cookies & Tracking",
     icon: <Cookie className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>Our website uses cookies to enhance your browsing experience and help us understand user behavior. You can adjust your browser settings to disable cookies at any time, although this may impact site functionality.</p>
         </div>
     )
@@ -76,7 +76,7 @@ const policySections = [
     title: "5. Data Security",
     icon: <Lock className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>We use industry-standard encryption and security protocols to protect your data from unauthorized access, misuse, or disclosure. Your payment details are handled by trusted third-party gateways that are PCI-DSS compliant.</p>
         </div>
     )
@@ -86,7 +86,7 @@ const policySections = [
     title: "6. Your Rights",
     icon: <BadgeCheck className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>You may:</p>
             <ul>
                 <li>Request access to your personal data.</li>
@@ -103,7 +103,7 @@ const policySections = [
     title: "7. Children’s Privacy",
     icon: <Users className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>Our products are intended for purchase by adults. We do not knowingly collect personal data from children under 18.</p>
         </div>
     )
@@ -113,17 +113,17 @@ const policySections = [
     title: "8. Policy Updates",
     icon: <RefreshCcw className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>We may update this Privacy Policy from time to time. The latest version will always be available on our website, and your continued use indicates acceptance.</p>
         </div>
     )
   },
   {
     id: "contact",
-    title: "Contact Us",
+    title: "9. Contact Us",
     icon: <Landmark className="w-5 h-5" />,
     content: (
-        <div className="prose-sm md:prose-base max-w-none">
+        <div className="prose-sm md:prose-base max-w-none text-muted-foreground">
             <p>
               For questions, feedback, or privacy concerns, contact:
               <br />
@@ -168,7 +168,7 @@ export default function PrivacyPolicyPage() {
                       <span>{section.title}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6 text-base text-muted-foreground">
+                  <AccordionContent className="px-6 pb-6 text-base">
                     {section.content}
                   </AccordionContent>
                 </AccordionItem>
