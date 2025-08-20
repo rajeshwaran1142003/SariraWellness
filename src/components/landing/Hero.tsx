@@ -91,7 +91,7 @@ export function Hero() {
             </Button>
           </div>
           <div className="mt-12 max-w-3xl mx-auto">
-            <div className="bg-white/30 rounded-lg p-4 shadow-inner border border-primary/10 mb-12 backdrop-blur-sm">
+            <div className="bg-white/30 rounded-lg p-4 shadow-inner border border-primary/10 mb-12 backdrop-blur-sm animate-floating">
                 <p className="text-center text-lg font-semibold text-primary/90">
                   Made with 100% Organic Figs & Premium Nuts.
                   <br />
