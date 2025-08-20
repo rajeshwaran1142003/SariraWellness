@@ -145,7 +145,7 @@ export default function ProductPage() {
                       </div>
                       <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 hover:scale-105">
                         <Link href="https://wa.me/917010422748" target="_blank">
-                          <WhatsappIcon className="mr-2 h-5 w-5" /> Shop Now
+                          <WhatsappIcon className="mr-2 h-5 w-5" /> Order now
                         </Link>
                       </Button>
                   </div>
