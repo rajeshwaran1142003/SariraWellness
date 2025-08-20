@@ -72,7 +72,7 @@ const trustBuilders = [
 ];
 
 const galleryImages = [
-    { src: "https://storage.googleapis.com/stedi-dev-images/sarira-fig-malt.png", alt: "SARIRA Fig Malt Pouch", hint: "product pouch" },
+    { src: "https://storage.googleapis.com/gcs-proxy/fstudio/v1/assets/948a313c_9b65_4487_98c1_823a0ff46d61/63345155_722a_49ed_a9bd_84f938a164c4", alt: "SARIRA Fig Malt Pouch", hint: "product pouch" },
     { src: "https://placehold.co/800x800.png", alt: "Spoonful of Fig Malt", hint: "fig malt lifestyle" },
     { src: "https://placehold.co/800x800.png", alt: "Organic Figs and Nuts", hint: "figs nuts" }
 ];

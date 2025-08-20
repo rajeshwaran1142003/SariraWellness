@@ -175,7 +175,7 @@ export default function TamilCulturePage() {
                         <p className="text-xl text-muted-foreground mb-10">Experience the pure, time-tested goodness of SARIRA Fig Malt.</p>
                         <div className="flex justify-center">
                              <Image
-                                src="https://storage.googleapis.com/stedi-dev-images/sarira-fig-malt.png"
+                                src="https://storage.googleapis.com/gcs-proxy/fstudio/v1/assets/948a313c_9b65_4487_98c1_823a0ff46d61/63345155_722a_49ed_a9bd_84f938a164c4"
                                 alt="SARIRA Fig Malt"
                                 width={400}
                                 height={400}

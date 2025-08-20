@@ -23,7 +23,7 @@ export function Product() {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 flex justify-center">
              <Image
-                src="https://storage.googleapis.com/stedi-dev-images/sarira-fig-malt.png"
+                src="https://storage.googleapis.com/gcs-proxy/fstudio/v1/assets/948a313c_9b65_4487_98c1_823a0ff46d61/63345155_722a_49ed_a9bd_84f938a164c4"
                 alt="SARIRA Fig Malt Pouch"
                 width={500}
                 height={500}
