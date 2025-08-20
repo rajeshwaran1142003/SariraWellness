@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -91,8 +92,11 @@ export function Hero() {
           </div>
           <div className="mt-12 max-w-3xl mx-auto">
             <div className="bg-white/30 rounded-lg p-4 shadow-inner border border-primary/10 mb-12 backdrop-blur-sm">
-                <p className="text-center text-xl font-headline text-primary/80 mb-2">"அந்தணர்நூல் வழி நின் றார்அத்திப்பழம் பபால்"</p>
-                <p className="text-center text-muted-foreground italic text-sm">— A metaphor from Sangam poetry comparing pure character to the sweetness of a fig.</p>
+                <p className="text-center text-lg font-semibold text-primary/90">
+                  Made with 100% Organic Figs & Premium Nuts.
+                  <br />
+                  No Added Sugar. No Preservatives.
+                </p>
             </div>
           </div>
            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
