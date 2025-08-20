@@ -3,7 +3,6 @@
 
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { About } from '@/components/landing/About';
 import { HowToUse } from '@/components/landing/HowToUse';
 import { Gallery } from '@/components/landing/Gallery';
 import { Journal } from '@/components/landing/Journal';
@@ -26,15 +25,6 @@ export default function AboutUsPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-1 pt-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={sectionVariants}
-        >
-          <About />
-        </motion.div>
-        
         <motion.div
           initial="hidden"
           whileInView="visible"

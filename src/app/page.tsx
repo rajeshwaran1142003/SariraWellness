@@ -10,6 +10,8 @@ import { Testimonials } from '@/components/landing/Testimonials';
 import { Contact } from '@/components/landing/Contact';
 import { Faq } from '@/components/landing/Faq';
 import { Support } from '@/components/landing/Support';
+import { About } from '@/components/landing/About';
+import { HowToUse } from '@/components/landing/HowToUse';
 
 export default function Home() {
   return (
@@ -17,8 +19,10 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <About />
         <Product />
         <Community />
+        <HowToUse />
         <Contact />
         <Support />
         <Faq />
