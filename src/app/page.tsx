@@ -3,11 +3,9 @@
 
 import { Hero } from '@/components/landing/Hero';
 import { Product } from '@/components/landing/Product';
-import { About } from '@/components/landing/About';
 import { Ingredients } from '@/components/landing/Ingredients';
 import { HowToUse } from '@/components/landing/HowToUse';
 import { Testimonials } from '@/components/landing/Testimonials';
-import { Gallery } from '@/components/landing/Gallery';
 import { Faq } from '@/components/landing/Faq';
 import { Journal } from '@/components/landing/Journal';
 import { Community } from '@/components/landing/Community';
@@ -57,15 +55,6 @@ export default function Home() {
           viewport={{ once: true, amount: 0.2 }}
           variants={sectionVariants}
         >
-          <About />
-        </motion.div>
-        
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
           <Ingredients />
         </motion.div>
         
@@ -94,15 +83,6 @@ export default function Home() {
             variants={sectionVariants}
         >
             <Testimonials />
-        </motion.div>
-
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
-            <Gallery />
         </motion.div>
 
         <motion.div
