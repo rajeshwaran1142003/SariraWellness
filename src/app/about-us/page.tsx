@@ -3,7 +3,7 @@
 
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { HowToUse } from '@/components/landing/HowToUse';
+import { Ingredients } from '@/components/landing/Ingredients';
 import { Gallery } from '@/components/landing/Gallery';
 import { Journal } from '@/components/landing/Journal';
 import { Button } from '@/components/ui/button';
@@ -41,7 +41,7 @@ export default function AboutUsPage() {
           viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <HowToUse />
+          <Ingredients />
         </motion.div>
 
         <motion.div
