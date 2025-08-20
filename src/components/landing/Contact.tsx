@@ -92,7 +92,7 @@ export function Contact() {
                     <div className="mt-8 space-y-4">
                         <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white transition-transform duration-300 hover:scale-105">
                             <Link href="https://wa.me/917010422748" target="_blank">
-                                <WhatsappIcon className="mr-2"/> Chat on WhatsApp
+                                <WhatsappIcon className="mr-2"/> Order on Whatsapp
                             </Link>
                         </Button>
                          <Button asChild size="lg" variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 hover:scale-105">
