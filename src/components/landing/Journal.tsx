@@ -12,7 +12,7 @@ import * as React from "react";
 const posts = [
   {
     title: "The Unsung Hero of Tamil Kitchens: The Humble Fig",
-    description: "Long before superfoods became a buzzword, the fig (അத்திப்பழം) was a cornerstone of wellness in Tamil households. We explore its journey from ancient scriptures to your kitchen.",
+    description: "Long before superfoods became a buzzword, the fig (അത്തിப்பழം) was a cornerstone of wellness in Tamil households. We explore its journey from ancient scriptures to your kitchen.",
     image: "https://images.unsplash.com/photo-1616264630975-c98543fbe751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmaWdzJTIwb24lMjBhJTIwcGxhdGV8ZW58MHx8fHwxNzU1Njg0MTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "figs on a plate",
     link: "/tamil-culture"
@@ -56,7 +56,7 @@ const posts = [
 
 export function Journal() {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
