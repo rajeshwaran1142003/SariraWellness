@@ -69,11 +69,11 @@ export function Footer() {
                   </li>
                    <li className="flex items-start">
                     <Phone className="mt-1 mr-4 h-5 w-5 text-accent shrink-0" />
-                    <a href="tel:+919876543210" className="hover:text-accent transition">+91 98765 43210</a>
+                    <a href="tel:+917010422748" className="hover:text-accent transition">+91 7010422748</a>
                   </li>
                   <li className="flex items-start">
                     <Mail className="mt-1 mr-4 h-5 w-5 text-accent shrink-0" />
-                    <a href="mailto:hello@sarira.wellness" className="hover:text-accent transition">hello@sarira.wellness</a>
+                    <a href="mailto:sariranutrition@gmail.com" className="hover:text-accent transition">sariranutrition@gmail.com</a>
                   </li>
                 </ul>
             </div>

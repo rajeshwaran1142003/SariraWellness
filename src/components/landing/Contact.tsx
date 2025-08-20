@@ -25,8 +25,8 @@ const contactInfo = [
         icon: <Mail className="w-6 h-6 text-accent" />,
         title: "Email Support",
         description: "Detailed assistance via email",
-        value: "support@sarirawellness.com",
-        href: "mailto:support@sarirawellness.com"
+        value: "sariranutrition@gmail.com",
+        href: "mailto:sariranutrition@gmail.com"
     },
     {
         icon: <Clock className="w-6 h-6 text-accent" />,
@@ -96,7 +96,7 @@ export function Contact() {
                             </Link>
                         </Button>
                          <Button asChild size="lg" variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-accent-foreground transition-transform duration-300 hover:scale-105">
-                            <Link href="mailto:support@sarirawellness.com">
+                            <Link href="mailto:sariranutrition@gmail.com">
                                 <Mail className="mr-2"/> Send Email
                             </Link>
                         </Button>

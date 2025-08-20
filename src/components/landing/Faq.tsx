@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -43,7 +44,7 @@ const faqs = [
   },
   {
     question: "Who do I contact for queries or returns?",
-    answer: "For any support, email us at support@sarirawellness.com or WhatsApp us at +91-7010422748. We're available Mon–Sat, 10AM – 6PM."
+    answer: "For any support, email us at sariranutrition@gmail.com or WhatsApp us at +91-7010422748. We're available Mon–Sat, 10AM – 6PM."
   }
 ];
 
