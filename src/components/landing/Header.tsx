@@ -10,9 +10,7 @@ import { SariraLogo } from '@/components/icons/SariraLogo';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/product', label: 'Product' },
-  { href: '/about-us', label: 'About' },
-  { href: '/about-us#recipes', label: 'Recipes' },
+  { href: '/#faq', label: 'FAQ' },
   { href: '/#wellness-ai', label: 'Wellness AI'}
 ];
 
@@ -46,7 +44,7 @@ export function Header() {
             </Link>
           ))}
           <Button asChild>
-            <Link href="/product">Shop Now</Link>
+            <Link href="https://wa.me/917010422748" target="_blank">Order Now</Link>
           </Button>
         </nav>
         <div className="md:hidden">
@@ -75,7 +73,7 @@ export function Header() {
             </Link>
           ))}
            <Button asChild size="lg">
-            <Link href="/product" onClick={closeMenu}>Shop Now</Link>
+            <Link href="https://wa.me/917010422748" target="_blank" onClick={closeMenu}>Order Now</Link>
           </Button>
         </nav>
       </div>
