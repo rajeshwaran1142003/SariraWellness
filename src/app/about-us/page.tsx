@@ -63,14 +63,14 @@ export default function AboutUsPage() {
         </motion.div>
 
         <motion.section 
-          className="py-16 md:py-24 bg-primary text-primary-foreground text-center"
+          className="py-12 md:py-16 bg-primary text-primary-foreground text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={sectionVariants}
         >
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-headline mb-8">
+            <h2 className="text-2xl font-headline mb-6">
               Ready to begin your wellness journey?
             </h2>
             <div className="flex justify-center gap-4">
