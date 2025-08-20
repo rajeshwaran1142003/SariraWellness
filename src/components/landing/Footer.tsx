@@ -65,7 +65,7 @@ export function Footer() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <MapPin className="mt-1 mr-4 h-5 w-5 text-accent shrink-0" />
-                    <span>123 Wellness Street, Chennai, Tamil Nadu 600001</span>
+                    <span>1/40, 6 PCM Colony, ST.Thomas Mount, Chennai-600016</span>
                   </li>
                    <li className="flex items-start">
                     <Phone className="mt-1 mr-4 h-5 w-5 text-accent shrink-0" />

@@ -37,8 +37,8 @@ const contactInfo = [
     {
         icon: <MapPin className="w-6 h-6 text-accent" />,
         title: "Head Office",
-        description: "123 Anna Salai",
-        value: "Chennai, Tamil Nadu - 600002",
+        description: "1/40, 6 PCM Colony, ST.Thomas Mount",
+        value: "Chennai-600016",
     }
 ];
 
