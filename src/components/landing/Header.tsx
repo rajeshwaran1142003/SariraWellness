@@ -10,7 +10,9 @@ import { SariraLogo } from '@/components/icons/SariraLogo';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/product', label: 'Product' },
+  { href: '/about-us', label: 'About' },
+  { href: '/about-us#recipes', label: 'Recipes' },
   { href: '/#wellness-ai', label: 'Wellness AI'}
 ];
 
