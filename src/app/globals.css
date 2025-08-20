@@ -24,6 +24,8 @@
     --input: 43 23% 90%;
     --ring: 29 78% 54%;
     --radius: 0.5rem;
+    --terracotta: 13 40% 45%;
+    --brown: 21 33% 27%;
   }
  
   .dark {
@@ -46,6 +48,8 @@
     --border: 88 28% 20%;
     --input: 88 28% 20%;
     --ring: 29 78% 54%;
+    --terracotta: 13 40% 45%;
+    --brown: 21 33% 27%;
   }
 }
 
