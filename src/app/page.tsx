@@ -3,13 +3,9 @@
 
 import { Hero } from '@/components/landing/Hero';
 import { Product } from '@/components/landing/Product';
-import { About } from '@/components/landing/About';
 import { HowToUse } from '@/components/landing/HowToUse';
-import { Ingredients } from '@/components/landing/Ingredients';
 import { Testimonials } from '@/components/landing/Testimonials';
-import { Journal } from '@/components/landing/Journal';
 import { Faq } from '@/components/landing/Faq';
-import { Gallery } from '@/components/landing/Gallery';
 import { Community } from '@/components/landing/Community';
 import { Contact } from '@/components/landing/Contact';
 import { WhatsappButton } from '@/components/landing/WhatsappButton';
@@ -49,6 +45,15 @@ export default function Home() {
         >
           <Product />
         </motion.div>
+
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+        >
+            <HowToUse />
+        </motion.div>
         
         <motion.div
             initial="hidden"
@@ -56,43 +61,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
         >
-            <About />
-        </motion.div>
-
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
-            <Ingredients />
-        </motion.div>
-
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
             <Testimonials />
-        </motion.div>
-
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
-          <Journal />
-        </motion.div>
-
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
-            <Gallery />
         </motion.div>
 
         <motion.div
