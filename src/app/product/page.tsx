@@ -12,6 +12,7 @@ import { Footer } from '@/components/landing/Footer';
 import { CheckCircle2, Leaf, Sprout, Brain, Utensils, Sandwich, Soup, Baby, Minus, Plus, HeartHandshake, ShieldCheck, Star, Truck, RefreshCw, Lock, MessageSquare } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState } from 'react';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 
 const benefits = [
@@ -142,8 +143,10 @@ export default function ProductPage() {
                           <Plus className="h-4 w-4" />
                         </Button>
                       </div>
-                      <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 animate-pulse">
-                        Add to Cart
+                      <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white transition-transform duration-300 hover:scale-105">
+                        <Link href="https://wa.me/917010422748" target="_blank">
+                          <WhatsappIcon className="mr-2 h-5 w-5" /> Order on WhatsApp
+                        </Link>
                       </Button>
                   </div>
                   <p className="text-xs text-center text-muted-foreground">One pouch lasts approximately 10-14 servings.</p>
