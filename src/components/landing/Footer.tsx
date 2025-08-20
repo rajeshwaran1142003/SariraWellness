@@ -31,7 +31,7 @@ export function Footer() {
           {/* Column 1: Brand Identity */}
           <div className="space-y-6">
             <Link href="/" className="mb-4 inline-block">
-              <SariraLogo isFooter={true} className="h-12" />
+              <SariraLogo isFooter={true} className="h-12" height={48} width={144}/>
             </Link>
             <p>
               Functional wellness rooted in Tamil tradition, blended for today’s lifestyle. Nourishing families with nature's goodness.
