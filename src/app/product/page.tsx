@@ -143,9 +143,9 @@ export default function ProductPage() {
                           <Plus className="h-4 w-4" />
                         </Button>
                       </div>
-                      <Button asChild size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white transition-transform duration-300 hover:scale-105">
+                      <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 hover:scale-105">
                         <Link href="https://wa.me/917010422748" target="_blank">
-                          <WhatsappIcon className="mr-2 h-5 w-5" /> Order on WhatsApp
+                          <WhatsappIcon className="mr-2 h-5 w-5" /> Shop Now
                         </Link>
                       </Button>
                   </div>
