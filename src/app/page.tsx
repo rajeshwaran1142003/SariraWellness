@@ -10,7 +10,6 @@ import { Testimonials } from '@/components/landing/Testimonials';
 import { Contact } from '@/components/landing/Contact';
 import { Faq } from '@/components/landing/Faq';
 import { Support } from '@/components/landing/Support';
-import { Recipes } from '@/components/landing/Recipes';
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
         <Hero />
         <Product />
         <Community />
-        <Recipes />
         <Contact />
         <Support />
         <Faq />
