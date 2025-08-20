@@ -3,15 +3,11 @@ import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
 import { Product } from '@/components/landing/Product';
 import { Community } from '@/components/landing/Community';
-import { Journal } from '@/components/landing/Journal';
 import { WellnessAI } from '@/components/landing/WellnessAI';
 import { Footer } from '@/components/landing/Footer';
 import { WhatsappButton } from '@/components/landing/WhatsappButton';
-import { Gallery } from '@/components/landing/Gallery';
-import { HowToUse } from '@/components/landing/HowToUse';
 import { Recipes } from '@/components/landing/Recipes';
 import { Testimonials } from '@/components/landing/Testimonials';
-import { About } from '@/components/landing/About';
 import { Contact } from '@/components/landing/Contact';
 import { Faq } from '@/components/landing/Faq';
 import { Support } from '@/components/landing/Support';
@@ -22,13 +18,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <About />
         <Product />
-        <HowToUse />
         <Recipes />
         <Testimonials />
-        <Gallery />
-        <Journal />
         <Community />
         <Contact />
         <Support />
