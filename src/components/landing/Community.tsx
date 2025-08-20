@@ -50,7 +50,7 @@ export function Community() {
               <CardDescription className="mb-6 text-muted-foreground group-hover:text-primary-foreground/80 min-h-[140px]">Discover creative and delicious ways to incorporate SARIRA Fig Malt into your daily meals and snacks.</CardDescription>
               <div className="mt-auto">
                 <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
-                    <Link href="/about-us#recipes">Explore Recipes</Link>
+                    <Link href="/recipes">Explore Recipes</Link>
                 </Button>
               </div>
             </CardContent>
