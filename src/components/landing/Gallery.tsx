@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const images = [
-  { src: "https://storage.googleapis.com/stedi-dev-images/sarira-gallery-1.png", alt: "A woman enjoying a healthy smoothie bowl", hint: "woman eating healthy" },
-  { src: "https://storage.googleapis.com/stedi-dev-images/sarira-gallery-2.png", alt: "A close-up of SARIRA Fig Malt being sprinkled", hint: "fig product" },
-  { src: "https://storage.googleapis.com/stedi-dev-images/sarira-gallery-3.png", alt: "A smiling mother feeding her child a healthy snack", hint: "mother child" },
-  { src: "https://storage.googleapis.com/stedi-dev-images/sarira-gallery-4.png", alt: "A traditional Tamil meal served on a banana leaf", hint: "tamil food" },
-  { src: "https://storage.googleapis.com/stedi-dev-images/sarira-gallery-5.png", alt: "Hands holding a bowl of fresh, ripe figs", hint: "fresh figs" },
-  { src: "https://storage.googleapis.com/stedi-dev-images/sarira-gallery-6.png", alt: "An elderly person enjoying a warm drink", hint: "wellness lifestyle" },
+  { src: "https://images.unsplash.com/photo-1730740505564-c47d83afa87b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMGVhdGluZyUyMGhlYWx0aHl8ZW58MHx8fHwxNzU1Njg0NjY5fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "A woman enjoying a healthy smoothie bowl", hint: "woman eating healthy" },
+  { src: "https://images.unsplash.com/photo-1697320834644-702cce927929?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmaWclMjBwcm9kdWN0fGVufDB8fHx8MTc1NTY4NDY2OXww&ixlib=rb-4.1.0&q=80&w=1080", alt: "A close-up of SARIRA Fig Malt being sprinkled", hint: "fig product" },
+  { src: "https://images.unsplash.com/photo-1624003379108-cf5b9cd41d35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb3RoZXIlMjBjaGlsZHxlbnwwfHx8fDE3NTU2ODQ2Njl8MA&ixlib=rb-4.1.0&q=80&w=1080", alt: "A smiling mother feeding her child a healthy snack", hint: "mother child" },
+  { src: "https://images.unsplash.com/photo-1628179148156-d9cfac053d6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YW1pbCUyMGZvb2R8ZW58MHx8fHwxNzU1Njg0NjY5fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "A traditional Tamil meal served on a banana leaf", hint: "tamil food" },
+  { src: "https://images.unsplash.com/photo-1636128774004-68374b26ed1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmcmVzaCUyMGZpZ3N8ZW58MHx8fHwxNzU1Njg0NjcwfDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Hands holding a bowl of fresh, ripe figs", hint: "fresh figs" },
+  { src: "https://images.unsplash.com/photo-1529724778170-491b776b49cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3ZWxsbmVzcyUyMGxpZmVzdHlsZXxlbnwwfHx8fDE3NTU2ODQ2Njl8MA&ixlib=rb-4.1.0&q=80&w=1080", alt: "An elderly person enjoying a warm drink", hint: "wellness lifestyle" },
 ];
 
 export function Gallery() {
