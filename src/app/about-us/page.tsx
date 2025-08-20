@@ -50,7 +50,7 @@ export default function AboutUsPage() {
           viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <Gallery />
+          <Journal />
         </motion.div>
 
         <motion.div
@@ -59,7 +59,7 @@ export default function AboutUsPage() {
           viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <Journal />
+          <Gallery />
         </motion.div>
 
         <motion.section 
