@@ -1,7 +1,13 @@
+
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import * as React from "react";
 
 const posts = [
   {
@@ -24,10 +30,35 @@ const posts = [
     image: "https://images.unsplash.com/photo-1675962292427-062dc596171e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZWFsdGh5JTIwZm9vZCUyMGJvd2x8ZW58MHx8fHwxNzU1Njg0MTM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "healthy food bowl",
     link: "/tamil-culture"
+  },
+  {
+    title: "Beyond Sugar: The Ancient Art of Sweetening with Nature",
+    description: "Discover how traditional Tamil diets used natural sweeteners like fig, honey, and jaggery to create delicious and healthy treats, long before refined sugar became common.",
+    image: "https://placehold.co/800x600.png",
+    hint: "natural sweeteners honey",
+    link: "/tamil-culture"
+  },
+  {
+    title: "Fueling the Future: Timeless Nutrition for Growing Kids",
+    description: "Learn about the traditional foods and practices that have nourished generations of healthy, active children in Tamil culture, focusing on immunity and energy.",
+    image: "https://placehold.co/800x600.png",
+    hint: "healthy child eating",
+    link: "/tamil-culture"
+  },
+  {
+    title: "Food as Medicine: The Siddha Philosophy in Your Kitchen",
+    description: "Explore the ancient Siddha wisdom that views food not just as sustenance, but as a powerful tool for maintaining balance and preventing illness.",
+    image: "https://placehold.co/800x600.png",
+    hint: "herbs spices",
+    link: "/tamil-culture"
   }
 ];
 
 export function Journal() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   return (
     <section id="journal" className="bg-secondary">
       <div className="container mx-auto px-4">
@@ -36,24 +67,41 @@ export function Journal() {
           <p className="text-xl text-muted-foreground">Discover the stories behind our ingredients and traditions</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <Card key={post.title} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
-              <CardHeader className="p-0">
-                <Link href={post.link}>
-                  <Image src={post.image} data-ai-hint={post.hint} alt={post.title} width={800} height={600} className="w-full h-48 object-cover" />
-                </Link>
-              </CardHeader>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-primary mb-2 h-20">{post.title}</h3>
-                <p className="text-muted-foreground mb-4 h-24 overflow-hidden">{post.description}</p>
-                <Link href={post.link} className="font-semibold text-accent hover:underline">
-                  Read More →
-                </Link>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full"
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent>
+            {posts.map((post, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 h-full">
+                  <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2 h-full flex flex-col">
+                    <CardHeader className="p-0">
+                      <Link href={post.link}>
+                        <Image src={post.image} data-ai-hint={post.hint} alt={post.title} width={800} height={600} className="w-full h-48 object-cover" />
+                      </Link>
+                    </CardHeader>
+                    <CardContent className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold text-primary mb-2 h-20">{post.title}</h3>
+                      <p className="text-muted-foreground mb-4 h-24 overflow-hidden flex-grow">{post.description}</p>
+                      <Link href={post.link} className="font-semibold text-accent hover:underline mt-auto">
+                        Read More →
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="ml-12" />
+          <CarouselNext className="mr-12" />
+        </Carousel>
         
         <div className="text-center mt-12">
           <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
