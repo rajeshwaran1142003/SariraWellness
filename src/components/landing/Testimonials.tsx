@@ -1,5 +1,9 @@
+
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
@@ -22,6 +26,15 @@ const testimonials = [
   }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  },
+};
+
 export function Testimonials() {
   return (
     <section id="testimonials" className="bg-secondary">
@@ -32,22 +45,31 @@ export function Testimonials() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="bg-background border-primary/10">
-              <CardContent className="p-8">
-                <p className="text-muted-foreground italic mb-6 text-lg leading-relaxed">"{testimonial.quote}"</p>
-                <div className="flex items-center">
-                  <Avatar className="w-12 h-12 mr-4">
-                    <AvatarImage src={`https://placehold.co/48x48.png`} data-ai-hint="portrait person" />
-                    <AvatarFallback className="bg-primary/10 text-primary font-bold">{testimonial.initials}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-semibold text-primary">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.name}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={cardVariants}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card className="bg-background border-primary/10 h-full">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <p className="text-muted-foreground italic mb-6 text-lg leading-relaxed flex-grow">"{testimonial.quote}"</p>
+                  <div className="flex items-center mt-auto">
+                    <Avatar className="w-12 h-12 mr-4">
+                      <AvatarImage src={`https://placehold.co/48x48.png`} data-ai-hint="portrait person" />
+                      <AvatarFallback className="bg-primary/10 text-primary font-bold">{testimonial.initials}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <div className="font-semibold text-primary">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
