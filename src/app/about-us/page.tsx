@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Recipes } from '@/components/landing/Recipes';
+import { About } from '@/components/landing/About';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -25,6 +26,15 @@ export default function AboutUsPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <Header />
       <main className="flex-1 pt-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
+        >
+          <About />
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
