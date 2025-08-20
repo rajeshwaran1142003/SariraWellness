@@ -7,21 +7,21 @@ const posts = [
   {
     title: "The Unsung Hero of Tamil Kitchens: The Humble Fig",
     description: "Long before superfoods became a buzzword, the fig (അத்திப்பழം) was a cornerstone of wellness in Tamil households. We explore its journey from ancient scriptures to your kitchen.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-journal-1.png",
+    image: "https://images.unsplash.com/photo-1605315357200-a4668c8e7a3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmlncyUyMG9uJTIwYSUyMHBsYXRlfGVufDB8fHx8MTc1NTY4NDEzNXww&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "figs on a plate",
     link: "/tamil-culture"
   },
   {
     title: "Postpartum Care, the Paatti Way: A Guide for New Mothers",
     description: "A new mother's body is a temple deserving of gentle, powerful nourishment. Learn how traditional Tamil postpartum care focuses on healing from within, with ingredients that restore strength and balance.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-journal-2.png",
+    image: "https://images.unsplash.com/photo-1548289227-b7d966b70003?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb3RoZXIlMjBiYWJ5JTIwZm9vZHxlbnwwfHx8fDE3NTU2ODQxMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "mother baby food",
     link: "/tamil-culture"
   },
   {
     title: "Why Your Gut Is Your Second Brain: A Tamil Perspective",
     description: "Modern science is catching up to what Tamil grandmothers always knew: a healthy gut is the key to overall well-being. Dive into the timeless food habits that promote a thriving inner ecosystem.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-journal-3.png",
+    image: "https://images.unsplash.com/photo-1675962292427-062dc596171e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZWFsdGh5JTIwZm9vZCUyMGJvd2x8ZW58MHx8fHwxNzU1Njg0MTM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "healthy food bowl",
     link: "/tamil-culture"
   }
