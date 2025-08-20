@@ -63,7 +63,7 @@ export default function AboutUsPage() {
         </motion.div>
 
         <motion.section 
-          className="py-12 md:py-16 bg-primary text-primary-foreground text-center"
+          className="py-12 md:py-16 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}

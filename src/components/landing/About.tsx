@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function About() {
   return (
-    <section id="about" className="bg-secondary">
+    <section id="about" className="bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-6">
@@ -21,7 +21,7 @@ export function About() {
             <p className="text-lg text-muted-foreground">
               Our Fig Malt is a tribute to this heritage—a blend of organic figs and premium nuts, crafted to nourish you from the inside out. It's more than a product; it's a piece of our culture, made for your well-being.
             </p>
-            <Button asChild variant="link" className="group text-accent hover:text-accent-foreground">
+            <Button asChild variant="link" className="group text-accent hover:text-accent-foreground p-0 h-auto text-base">
               <Link href="/tamil-culture">
                 Explore Our Heritage <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>

@@ -1,5 +1,9 @@
+
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Utensils, Sandwich, Soup, Baby } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const uses = [
     {
@@ -24,9 +28,18 @@ const uses = [
     }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  },
+};
+
 export function HowToUse() {
   return (
-    <section id="how-to-use" className="bg-secondary">
+    <section id="how-to-use" className="bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Versatile & Easy to Use</h2>
@@ -34,17 +47,27 @@ export function HowToUse() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {uses.map((use, index) => (
-            <Card key={index} className="text-center h-full flex flex-col">
-              <CardHeader>
-                <div className="mx-auto bg-accent/10 text-accent p-4 rounded-full w-fit mb-4">
-                  {use.icon}
-                </div>
-                <CardTitle>{use.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{use.description}</p>
-              </CardContent>
-            </Card>
+            <motion.div
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={cardVariants}
+              transition={{ delay: index * 0.1 }}
+              className="h-full"
+            >
+              <Card className="text-center h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                <CardHeader>
+                  <div className="mx-auto bg-accent/10 text-accent p-4 rounded-full w-fit mb-4">
+                    {use.icon}
+                  </div>
+                  <CardTitle>{use.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-muted-foreground">{use.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
