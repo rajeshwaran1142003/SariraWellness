@@ -93,33 +93,6 @@ const supportTopics = [
         </div>
     )
   },
-  {
-    id: 'faq',
-    title: 'Frequently Asked Questions',
-    icon: <HelpCircle className="w-10 h-10" />,
-    content: (
-        <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
-            <AccordionItem value="item-1">
-                <AccordionTrigger className="text-xl">What is SARIRA Fig Malt made of?</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                    SARIRA Fig Malt is made from 100% organic figs and premium nuts. No preservatives, no refined sugar, and no artificial flavors — just clean, plant-based nutrition.
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-                <AccordionTrigger className="text-xl">Is SARIRA safe for children and elders?</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                    Yes! SARIRA is gentle, nutritious, and family-friendly, suitable for children above 1 year and elders alike. It supports digestion, immunity, and energy in all age groups.
-                </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-                <AccordionTrigger className="text-xl">Can I use SARIRA as a sugar substitute?</AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
-                    Absolutely. SARIRA Fig Malt has a naturally sweet taste from figs and can be used in place of refined sugar in milk, tea, porridge, baking, or toast toppings.
-                </AccordionContent>
-            </AccordionItem>
-        </Accordion>
-    )
-  },
 ];
 
 const cardVariants = {
@@ -168,7 +141,7 @@ export function Support() {
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Support Center</h2>
                 <p className="text-xl text-muted-foreground">How can we help you?</p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {supportTopics.map((topic) => (
                   <motion.div key={topic.id} variants={cardVariants} exit="exit">
                     <Card
