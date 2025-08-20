@@ -3,7 +3,6 @@
 
 import { Hero } from '@/components/landing/Hero';
 import { Product } from '@/components/landing/Product';
-import { HowToUse } from '@/components/landing/HowToUse';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { Faq } from '@/components/landing/Faq';
 import { Community } from '@/components/landing/Community';
@@ -44,15 +43,6 @@ export default function Home() {
           variants={sectionVariants}
         >
           <Product />
-        </motion.div>
-
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={sectionVariants}
-        >
-            <HowToUse />
         </motion.div>
         
         <motion.div
