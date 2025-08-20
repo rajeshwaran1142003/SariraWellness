@@ -6,7 +6,6 @@ import { Community } from '@/components/landing/Community';
 import { WellnessAI } from '@/components/landing/WellnessAI';
 import { Footer } from '@/components/landing/Footer';
 import { WhatsappButton } from '@/components/landing/WhatsappButton';
-import { Recipes } from '@/components/landing/Recipes';
 import { Testimonials } from '@/components/landing/Testimonials';
 import { Contact } from '@/components/landing/Contact';
 import { Faq } from '@/components/landing/Faq';
@@ -19,7 +18,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Product />
-        <Recipes />
         <Testimonials />
         <Community />
         <Contact />

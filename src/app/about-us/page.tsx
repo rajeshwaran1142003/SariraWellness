@@ -10,6 +10,7 @@ import { Journal } from '@/components/landing/Journal';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Recipes } from '@/components/landing/Recipes';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -40,7 +41,7 @@ export default function AboutUsPage() {
           viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <HowToUse />
+          <Recipes />
         </motion.div>
 
         <motion.div
