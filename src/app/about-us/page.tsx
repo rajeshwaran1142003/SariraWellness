@@ -41,7 +41,7 @@ export default function AboutUsPage() {
           viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <Recipes />
+          <HowToUse />
         </motion.div>
 
         <motion.div
