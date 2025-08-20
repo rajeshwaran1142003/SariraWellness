@@ -40,7 +40,7 @@ export function Footer() {
           
           {/* Column 2: Navigation */}
           <div className="md:pt-4">
-            <h4 className="font-bold text-lg text-primary-foreground mb-4">Navigate</h4>
+            <h4 className="font-bold text-lg text-accent mb-4">Navigate</h4>
             <ul className="space-y-3">
               {navLinks.map(link => (
                   <li key={link.href}><Link href={link.href} className="hover:text-accent transition">{link.label}</Link></li>
@@ -50,7 +50,7 @@ export function Footer() {
           
           {/* Column 3: Support */}
           <div className="md:pt-4">
-            <h4 className="font-bold text-lg text-primary-foreground mb-4">Support</h4>
+            <h4 className="font-bold text-lg text-accent mb-4">Support</h4>
             <ul className="space-y-3">
               {policyLinks.map(link => (
                 <li key={link.label}><Link href={link.href} className="hover:text-accent transition">{link.label}</Link></li>
@@ -61,7 +61,7 @@ export function Footer() {
           {/* Column 4: Contact & Subscribe */}
           <div className="space-y-8 md:pt-4">
              <div>
-                <h4 className="font-bold text-lg text-primary-foreground mb-4">Contact Us</h4>
+                <h4 className="font-bold text-lg text-accent mb-4">Contact Us</h4>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <MapPin className="mt-1 mr-4 h-5 w-5 text-accent shrink-0" />
@@ -78,7 +78,7 @@ export function Footer() {
                 </ul>
             </div>
              <div>
-                <h4 className="font-bold text-lg text-primary-foreground mb-4">Stay Updated</h4>
+                <h4 className="font-bold text-lg text-accent mb-4">Stay Updated</h4>
                 <form className="flex gap-2">
                     <Input type="email" placeholder="Your email" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 flex-grow" />
                     <Button type="submit" className="bg-accent text-accent-foreground hover:bg-accent/90">Subscribe</Button>
