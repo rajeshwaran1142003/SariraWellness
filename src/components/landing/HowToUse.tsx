@@ -4,6 +4,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Utensils, Sandwich, Soup, Baby } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from "next/image";
 
 const uses = [
     {
@@ -41,6 +42,16 @@ export function HowToUse() {
   return (
     <section id="how-to-use" className="bg-white">
       <div className="container mx-auto px-4">
+        <div className="mb-12">
+            <Image 
+                src="https://placehold.co/1200x400.png"
+                alt="Person using SARIRA Fig Malt in a recipe"
+                data-ai-hint="food preparation lifestyle"
+                width={1200}
+                height={400}
+                className="w-full rounded-lg shadow-lg"
+            />
+        </div>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Versatile & Easy to Use</h2>
           <p className="text-xl text-muted-foreground">Incorporate SARIRA Fig Malt into your daily routine</p>
