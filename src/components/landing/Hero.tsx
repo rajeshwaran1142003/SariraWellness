@@ -86,7 +86,7 @@ export function Hero() {
               <Link href="/product">Try Fig Malt</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-              <Link href="/#about">Learn our story</Link>
+              <Link href="/about-us" target="_blank" rel="noopener">Learn our story</Link>
             </Button>
           </div>
            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
