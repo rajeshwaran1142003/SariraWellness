@@ -66,8 +66,8 @@ export function Benefits() {
     <section id="benefits" className="bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Benefits</h2>
-          <p className="text-xl text-muted-foreground">Natural solutions for every stage of life.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Wellness for Every Chapter</h2>
+          <p className="text-xl text-muted-foreground">Nourishing solutions for every stage of life’s journey.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
