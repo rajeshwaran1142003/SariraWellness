@@ -54,7 +54,7 @@ export function Testimonials() {
               variants={cardVariants}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="bg-background border-primary/10 h-full">
+              <Card className="bg-background border-primary/10 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                 <CardContent className="p-8 flex flex-col h-full">
                   <p className="text-muted-foreground italic mb-6 text-lg leading-relaxed flex-grow">"{testimonial.quote}"</p>
                   <div className="flex items-center mt-auto">
