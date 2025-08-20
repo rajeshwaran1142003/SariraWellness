@@ -87,7 +87,7 @@ export function Hero() {
               <Link href="/product">Try Fig Malt</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-              <Link href="/about-us">Learn our story</Link>
+              <Link href="/tamil-culture">Learn our story</Link>
             </Button>
           </div>
           <div className="mt-12 max-w-3xl mx-auto">
