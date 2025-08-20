@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -20,9 +21,9 @@ export function About() {
             <p className="text-lg text-muted-foreground">
               Our Fig Malt is a tribute to this heritage—a blend of organic figs and premium nuts, crafted to nourish you from the inside out. It's more than a product; it's a piece of our culture, made for your well-being.
             </p>
-            <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <Button asChild variant="link" className="group text-accent hover:text-accent-foreground">
               <Link href="/tamil-culture">
-                Explore Our Heritage <ArrowRight className="ml-2 h-4 w-4" />
+                Explore Our Heritage <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
@@ -33,6 +34,7 @@ export function About() {
               width={800}
               height={600}
               className="w-full rounded-lg shadow-xl"
+              loading="lazy"
             />
           </div>
         </div>
