@@ -18,12 +18,12 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Product />
-        <Testimonials />
         <Community />
         <Contact />
         <Support />
         <Faq />
         <WellnessAI />
+        <Testimonials />
       </main>
       <Footer />
       <WhatsappButton />
