@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,37 +9,37 @@ const recipes = [
   {
     title: "Classic Warm Fig Malt Drink",
     description: "A daily immunity booster for all ages. Best served warm on an empty stomach to aid absorption and kickstart your day.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-recipe-1.png",
+    image: "https://images.unsplash.com/photo-1747972918307-7fe79f01cd43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d2FybSUyMGRyaW5rJTIwbXVnfGVufDB8fHx8MTc1NTY4NDg2OHww&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "warm drink mug"
   },
   {
     title: "Fig Malt Banana Smoothie",
     description: "A cool, creamy, fiber-rich breakfast. Blend one banana, a cup of milk, and a spoonful of SARIRA for a filling start.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-recipe-2.png",
+    image: "https://images.unsplash.com/photo-1557568951-a691f75c810f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbW9vdGhpZSUyMGJvd2x8ZW58MHx8fHwxNzU1Njg0ODY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "smoothie bowl"
   },
   {
     title: "Sugar-Free Fig Malt Muffins",
     description: "Kid-friendly, guilt-free snacks perfect for tiffin boxes. Use SARIRA as a natural sweetener in your favorite muffin recipe.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-recipe-3.png",
+    image: "https://images.unsplash.com/photo-1708989173661-545fc4c2c8d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoZWFsdGh5JTIwbXVmZmluc3xlbnwwfHx8fDE3NTU2ODQ4Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "healthy muffins"
   },
   {
     title: "SARIRA Energy Balls",
     description: "No-bake bites for busy days. Mix with oats, nuts, and a touch of ghee, then roll and refrigerate for an instant energy boost.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-recipe-4.png",
+    image: "https://images.unsplash.com/photo-1493808419309-a179d858ee5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlbmVyZ3klMjBiYWxsc3xlbnwwfHx8fDE3NTU2ODQ4Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "energy balls"
   },
   {
     title: "Wholesome Toast Topper",
     description: "A sweet surprise in everyday meals. Sprinkle SARIRA on ghee-laden toast, idiyappam, or a warm chapati.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-recipe-5.png",
+    image: "https://images.unsplash.com/photo-1676616561406-b88620ebf819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0b2FzdCUyMHdpdGglMjB0b3BwaW5nfGVufDB8fHx8MTc1NTY4NDg2OHww&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "toast with topping"
   },
   {
     title: "Nourishing Porridge Mix",
     description: "Gentle porridge ideas for tiny tummies and new moms. Blends perfectly with ragi kanji, dal mash, or mashed banana.",
-    image: "https://storage.googleapis.com/stedi-dev-images/sarira-recipe-6.png",
+    image: "https://images.unsplash.com/photo-1548289227-b7d966b70003?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYWJ5JTIwZm9vZCUyMHBvcnJpZGdlfGVufDB8fHx8MTc1NTY4NDg2OHww&ixlib=rb-4.1.0&q=80&w=1080",
     hint: "baby food porridge"
   }
 ];
