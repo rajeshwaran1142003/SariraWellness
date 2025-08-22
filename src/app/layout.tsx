@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import { SITE_CONFIG } from '@/config/content';
 
 export const metadata: Metadata = {
-  title: 'SARIRA | Functional Wellness Rooted in Tradition',
-  description: "Functional wellness rooted in Tamil tradition, blended for today's lifestyle.",
+  title: `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`,
+  description: SITE_CONFIG.description,
 };
 
 export default function RootLayout({
